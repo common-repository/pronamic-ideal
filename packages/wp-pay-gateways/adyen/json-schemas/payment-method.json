@@ -1,0 +1,17 @@
+{
+	"$id": "https://github.com/wp-pay-gateways/adyen/blob/master/json-schemas/payment-method.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Adyen payment method.",
+	"type": "object",
+	"properties": {
+		"name": {
+			"type": "string"
+		},
+		"type": {
+			"type": "string"
+		},
+		"issuers": {
+			"type": "array"
+		}
+	}
+}

@@ -1,0 +1,44 @@
+{
+	"name": "omnikassa-2",
+	"version": "4.7.2",
+	"description": "Rabo Smart Pay driver for the WordPress payment processing library.",
+	"author": {
+		"name": "Pronamic",
+		"email": "info@pronamic.nl",
+		"url": "http://www.pronamic.nl/"
+	},
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"wordpress",
+		"wp",
+		"pay",
+		"omnikassa",
+		"gateway",
+		"pronamic"
+	],
+	"homepage": "http://www.wp-pay.org/gateways/omnikassa-2/",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/wp-pay-gateways/omnikassa-2"
+	},
+	"contributors": [
+		{
+			"name": "Remco Tolsma",
+			"email": "info@remcotolsma.nl",
+			"url": "http://www.remcotolsma.nl/"
+		}
+	],
+	"bugs": {
+		"url": "https://github.com/wp-pay-gateways/omnikassa-2/issues"
+	},
+	"devDependencies": {
+		"@wordpress/env": "^9.9.0",
+		"@wordpress/prettier-config": "^3.14.0",
+		"@wordpress/scripts": "^27.8.0",
+		"prettier": "npm:wp-prettier@^3.0.3"
+	},
+	"prettier": "@wordpress/prettier-config",
+	"scripts": {
+		"lint:pkg-json": "wp-scripts lint-pkg-json"
+	}
+}

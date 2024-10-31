@@ -1,0 +1,395 @@
+<?php
+
+namespace Pronamic\WordPress\Pay\Gateways\Ingenico\OrderStandard;
+
+use Pronamic\IDealIssuers\IDealIssuerService;
+use Pronamic\WordPress\Pay\Core\Gateway as Core_Gateway;
+use Pronamic\WordPress\Pay\Core\PaymentMethod;
+use Pronamic\WordPress\Pay\Core\PaymentMethods as Core_PaymentMethods;
+use Pronamic\WordPress\Pay\Fields\CachedCallbackOptions;
+use Pronamic\WordPress\Pay\Fields\IDealIssuerSelectField;
+use Pronamic\WordPress\Pay\Fields\SelectFieldOption;
+use Pronamic\WordPress\Pay\Fields\SelectFieldOptionGroup;
+use Pronamic\WordPress\Pay\Gateways\Ingenico\Brands;
+use Pronamic\WordPress\Pay\Gateways\Ingenico\DataCustomerHelper;
+use Pronamic\WordPress\Pay\Gateways\Ingenico\DataGeneralHelper;
+use Pronamic\WordPress\Pay\Gateways\Ingenico\DataUrlHelper;
+use Pronamic\WordPress\Pay\Gateways\Ingenico\Parameters;
+use Pronamic\WordPress\Pay\Gateways\Ingenico\PaymentMethods;
+use Pronamic\WordPress\Pay\Gateways\Ingenico\Statuses;
+use Pronamic\WordPress\Pay\Gateways\Ingenico\Util;
+use Pronamic\WordPress\Pay\Gateways\Ingenico\Security;
+use Pronamic\WordPress\Pay\Payments\Payment;
+
+/**
+ * Title: Ingenico order standard gateway
+ * Description:
+ * Copyright: 2005-2023 Pronamic
+ * Company: Pronamic
+ *
+ * @author  Remco Tolsma
+ * @version 2.0.4
+ * @since   1.0.0
+ */
+class Gateway extends Core_Gateway {
+	/**
+	 * Config
+	 *
+	 * @var Config
+	 */
+	protected $config;
+
+	/**
+	 * Client.
+	 *
+	 * @var Client
+	 */
+	protected $client;
+
+	/**
+	 * Constructs and initializes an OrderStandard gateway
+	 *
+	 * @param Config $config Config.
+	 */
+	public function __construct( Config $config ) {
+		parent::__construct();
+
+		$this->config = $config;
+
+		$this->set_mode( $config->mode );
+
+		$this->set_method( self::METHOD_HTML_FORM );
+
+		// Supported features.
+		$this->supports = [
+			'payment_status_request',
+		];
+
+		// Client.
+		$this->client = new Client( $config->psp_id );
+
+		$this->client->set_payment_server_url( $config->get_form_action_url() );
+		$this->client->set_direct_query_url( $config->get_direct_query_url() );
+		$this->client->set_pass_phrase_in( $config->sha_in_pass_phrase );
+		$this->client->set_pass_phrase_out( $config->sha_out_pass_phrase );
+		$this->client->set_user_id( $config->user_id );
+		$this->client->set_password( $config->password );
+
+		if ( ! empty( $config->hash_algorithm ) ) {
+			$this->client->set_hash_algorithm( $config->hash_algorithm );
+		}
+
+		// Methods.
+		$this->register_payment_method( new PaymentMethod( Core_PaymentMethods::BANK_TRANSFER ) );
+		$this->register_payment_method( new PaymentMethod( Core_PaymentMethods::CREDIT_CARD ) );
+		$this->register_payment_method( new PaymentMethod( Core_PaymentMethods::BANCONTACT ) );
+		$this->register_payment_method( new PaymentMethod( Core_PaymentMethods::PAYPAL ) );
+
+		// Payment method iDEAL.
+		$payment_method_ideal = new PaymentMethod( Core_PaymentMethods::IDEAL );
+
+		$field_ideal_issuer = new IDealIssuerSelectField( 'pronamic_pay_ingenico_ideal_issuer' );
+		$field_ideal_issuer->set_options( $this->get_ideal_issuers() );
+
+		$payment_method_ideal->add_field( $field_ideal_issuer );
+
+		$this->register_payment_method( $payment_method_ideal );
+	}
+
+	/**
+	 * Get iDEAL issuers.
+	 *
+	 * @link https://epayments-support.ingenico.com/en/payment-methods/alternative-payment-methods/ideal#ideal_integration_guides_redirect_to_ideal_bank_page
+	 * @return iterable<SelectFieldOption|SelectFieldOptionGroup>
+	 */
+	private function get_ideal_issuers() {
+		if ( 'test' === $this->get_mode() ) {
+			return [
+				new SelectFieldOption( '9999+TST', \__( 'TST iDEAL', 'pronamic-ideal' ) ),
+			];
+		}
+
+		$ideal_issuer_service = new IDealIssuerService();
+
+		$issuers = $ideal_issuer_service->get_issuers();
+
+		$items = [];
+
+		foreach ( $issuers as $issuer ) {
+			$items[] = new SelectFieldOption( $issuer->code, $issuer->name );
+		}
+
+		return $items;
+	}
+
+	/**
+	 * Start
+	 *
+	 * @see Core_Gateway::start()
+	 *
+	 * @param Payment $payment Payment.
+	 */
+	public function start( Payment $payment ) {
+		$payment->set_action_url( $this->client->get_payment_server_url() );
+
+		if ( $this->config->alias_enabled ) {
+			$alias = uniqid();
+
+			$payment->set_meta( 'ogone_alias', $alias );
+		}
+	}
+
+	/**
+	 * Get output fields
+	 *
+	 * @param Payment $payment Payment.
+	 *
+	 * @return array
+	 * @since   1.2.1
+	 * @version 2.0.4
+	 */
+	public function get_output_fields( Payment $payment ) {
+		$ogone_data = $this->client->get_data();
+
+		// General.
+		$ogone_data_general = new DataGeneralHelper( $ogone_data );
+
+		$order_id = $payment->format_string( $this->config->order_id );
+
+		if ( '' === $order_id ) {
+			$order_id = $payment->get_id();
+		}
+
+		$ogone_data_general
+			->set_order_id( (string) $order_id )
+			->set_order_description( (string) $payment->get_description() )
+			->set_param_plus( 'payment_id=' . $payment->get_id() )
+			->set_currency( $payment->get_total_amount()->get_currency()->get_alphabetic_code() )
+			->set_amount( $payment->get_total_amount()->get_minor_units()->format( 0, '', '' ) );
+
+		// Communication parameters.
+		if ( '' !== $this->config->complus ) {
+			$ogone_data->set_field( 'COMPLUS', $payment->format_string( $this->config->complus ) );
+		}
+
+		// Alias.
+		$alias = $payment->get_meta( 'ogone_alias' );
+
+		if ( $this->config->alias_enabled && is_string( $alias ) && false !== $alias ) {
+			$ogone_data_general
+				->set_alias( $alias )
+				->set_alias_usage( (string) $this->config->alias_usage );
+		}
+
+		$customer = $payment->get_customer();
+
+		// Language.
+		$locale = \get_locale();
+
+		if ( null !== $customer ) {
+			$customer_locale = $customer->get_locale();
+
+			// Locale not always contains `_`, e.g. "Nederlands" in Firefox.
+			if ( null !== $customer_locale && false !== \strpos( $customer_locale, '_' ) ) {
+				$locale = $customer_locale;
+			}
+		}
+
+		$ogone_data_general->set_language( $locale );
+
+		// Customer.
+		$ogone_data_customer = new DataCustomerHelper( $ogone_data );
+
+		if ( null !== $customer ) {
+			$name = $customer->get_name();
+
+			if ( null !== $name ) {
+				$ogone_data_customer->set_name( strval( $name ) );
+			}
+
+			$ogone_data_customer->set_email( (string) $customer->get_email() );
+		}
+
+		$billing_address = $payment->get_billing_address();
+
+		if ( null !== $billing_address ) {
+			$ogone_data_customer
+				->set_address( (string) $billing_address->get_line_1() )
+				->set_zip( (string) $billing_address->get_postal_code() )
+				->set_town( (string) $billing_address->get_city() )
+				->set_country( (string) $billing_address->get_country_code() )
+				->set_telephone_number( (string) $billing_address->get_phone() );
+		}
+
+		/*
+		 * Payment method.
+		 *
+		 * @link https://github.com/wp-pay-gateways/ogone/wiki/Brands
+		 */
+		switch ( $payment->get_payment_method() ) {
+			case Core_PaymentMethods::BANK_TRANSFER:
+				/*
+				 * Set bank transfer payment method.
+				 * @since 2.2.0
+				 */
+				$ogone_data_general
+					->set_payment_method( PaymentMethods::BANK_TRANSFER );
+
+				break;
+			case Core_PaymentMethods::CREDIT_CARD:
+				/*
+				 * Set credit card payment method.
+				 * @since 1.2.3
+				 */
+				$ogone_data_general
+					->set_payment_method( PaymentMethods::CREDIT_CARD );
+
+				break;
+			case Core_PaymentMethods::IDEAL:
+				/*
+				 * Set iDEAL payment method.
+				 * @since 1.2.3
+				 */
+				$ogone_data_general
+					->set_brand( Brands::IDEAL )
+					->set_payment_method( PaymentMethods::IDEAL );
+
+				$issuer = $payment->get_meta( 'issuer' );
+
+				if ( is_string( $issuer ) ) {
+					$ogone_data_general->set_field( 'ISSUERID', $issuer );
+				}
+
+				break;
+			case Core_PaymentMethods::BANCONTACT:
+			case Core_PaymentMethods::MISTER_CASH:
+				$ogone_data_general
+					->set_brand( Brands::BCMC )
+					->set_payment_method( PaymentMethods::CREDIT_CARD );
+
+				break;
+			case Core_PaymentMethods::PAYPAL:
+				$ogone_data_general
+					->set_payment_method( PaymentMethods::PAYPAL );
+
+				break;
+		}
+
+		// Parameter Variable.
+		$param_var = Util::get_param_var( $this->config->param_var );
+
+		if ( ! empty( $param_var ) ) {
+			$ogone_data->set_field( 'PARAMVAR', $param_var );
+		}
+
+		// Template Page.
+		$template_page = $this->config->template_page;
+
+		if ( ! empty( $template_page ) ) {
+			$ogone_data->set_field( 'TP', $template_page );
+		}
+
+		// URLs.
+		$ogone_url_helper = new DataUrlHelper( $ogone_data );
+
+		$ogone_url_helper
+			->set_accept_url( add_query_arg( 'status', 'accept', $payment->get_return_url() ) )
+			->set_cancel_url( add_query_arg( 'status', 'cancel', $payment->get_return_url() ) )
+			->set_decline_url( add_query_arg( 'status', 'decline', $payment->get_return_url() ) )
+			->set_exception_url( add_query_arg( 'status', 'exception', $payment->get_return_url() ) );
+
+		return $this->client->get_fields();
+	}
+
+	/**
+	 * Update status of the specified payment
+	 *
+	 * @param Payment $payment Payment.
+	 */
+	public function update_status( Payment $payment ) {
+		$data = Security::get_request_data();
+
+		$data = $this->client->verify_request( $data );
+
+		if ( false !== $data ) {
+			$status = Statuses::transform( (string) $data[ Parameters::STATUS ] );
+
+			$payment->set_status( $status );
+
+			// Update transaction ID.
+			if ( \array_key_exists( Parameters::PAY_ID, $data ) ) {
+				$payment->set_transaction_id( (string) $data[ Parameters::PAY_ID ] );
+			}
+
+			// Add payment note.
+			$this->update_status_payment_note( $payment, $data );
+
+			return;
+		}
+
+		// Get order status with direct query.
+		$order_id = $payment->format_string( $this->config->order_id );
+
+		if ( '' === $order_id ) {
+			$order_id = $payment->get_id();
+		}
+
+		try {
+			$status = $this->client->get_order_status( (string) $order_id );
+		} catch ( \Exception $e ) {
+			$payment->add_note( $e->getMessage() );
+
+			return;
+		}
+
+		if ( null !== $status ) {
+			$payment->set_status( $status );
+		}
+	}
+
+	/**
+	 * Update status payment note
+	 *
+	 * @param Payment $payment Payment.
+	 * @param array   $data    Data.
+	 * @return void
+	 */
+	private function update_status_payment_note( Payment $payment, $data ) {
+		$labels = [
+			'STATUS'     => __( 'Status', 'pronamic-ideal' ),
+			'ORDERID'    => __( 'Order ID', 'pronamic-ideal' ),
+			'CURRENCY'   => __( 'Currency', 'pronamic-ideal' ),
+			'AMOUNT'     => __( 'Amount', 'pronamic-ideal' ),
+			'PM'         => __( 'Payment Method', 'pronamic-ideal' ),
+			'ACCEPTANCE' => __( 'Acceptance', 'pronamic-ideal' ),
+			'CARDNO'     => __( 'Card Number', 'pronamic-ideal' ),
+			'ED'         => __( 'End Date', 'pronamic-ideal' ),
+			'CN'         => __( 'Customer Name', 'pronamic-ideal' ),
+			'TRXDATE'    => __( 'Transaction Date', 'pronamic-ideal' ),
+			'PAYID'      => __( 'Pay ID', 'pronamic-ideal' ),
+			'NCERROR'    => __( 'NC Error', 'pronamic-ideal' ),
+			'BRAND'      => __( 'Brand', 'pronamic-ideal' ),
+			'IP'         => __( 'IP', 'pronamic-ideal' ),
+			'SHASIGN'    => __( 'SHA Signature', 'pronamic-ideal' ),
+		];
+
+		$note = '';
+
+		$note .= '<p>';
+		$note .= __( 'Ogone transaction data in response message:', 'pronamic-ideal' );
+		$note .= '</p>';
+
+		$note .= '<dl>';
+
+		foreach ( $labels as $key => $label ) {
+			if ( isset( $data[ $key ] ) && '' !== $data[ $key ] ) {
+				$note .= sprintf( '<dt>%s</dt>', esc_html( $label ) );
+				$note .= sprintf( '<dd>%s</dd>', esc_html( $data[ $key ] ) );
+			}
+		}
+
+		$note .= '</dl>';
+
+		$payment->add_note( $note );
+	}
+}

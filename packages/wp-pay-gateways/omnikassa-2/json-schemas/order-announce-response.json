@@ -1,0 +1,20 @@
+{
+	"$id": "https://example.com/person.schema.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Rabo Smart Pay order announce response.",
+	"type": "object",
+	"required": [
+		"omnikassaOrderId",
+		"redirectUrl"
+	],
+	"properties": {
+		"omnikassaOrderId": {
+			"type": "string",
+			"description": "The unique ID that Rabo Omnikassa assigned to this order. This ID can be later used to look up the order status that is communicated using the webhook notification mechanism."
+		},
+		"redirectUrl": {
+			"type": "string",
+			"description": "The URL to which the browser of the consumer must be redirected to. This URL points to the payment pages of Rabo Omnikassa."
+		}
+	}
+}

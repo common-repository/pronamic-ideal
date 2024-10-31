@@ -1,0 +1,19 @@
+{
+	"$id": "https://github.com/wp-pay-gateways/adyen/blob/master/json-schemas/payment-methods-response.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Adyen payment methods response.",
+	"type": "object",
+	"properties": {
+		"paymentMethods": {
+			"type": "array",
+			"description": "Detailed list of payment methods required to generate payment forms."
+		},
+		"storedPaymentMethods": {
+			"type": "array",
+			"description": "List of all stored payment methods."
+		}
+	},
+	"required": [
+		"paymentMethods"
+	]
+}

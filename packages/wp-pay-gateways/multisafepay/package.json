@@ -1,0 +1,43 @@
+{
+	"name": "multisafepay",
+	"version": "4.5.0",
+	"description": "MultiSafepay driver for the WordPress payment processing library.",
+	"author": {
+		"name": "Pronamic",
+		"email": "info@pronamic.nl",
+		"url": "http://www.pronamic.nl/"
+	},
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"wordpress",
+		"wp",
+		"pay",
+		"multisafepay",
+		"ideal",
+		"gateway",
+		"pronamic"
+	],
+	"homepage": "http://www.wp-pay.org/gateways/multisafepay/",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/wp-pay-gateways/multisafepay"
+	},
+	"contributors": [
+		{
+			"name": "Remco Tolsma",
+			"email": "info@remcotolsma.nl",
+			"url": "http://www.remcotolsma.nl/"
+		}
+	],
+	"bugs": {
+		"url": "https://github.com/wp-pay-gateways/multisafepay/issues"
+	},
+	"devDependencies": {
+		"@wordpress/env": "^9.6.0",
+		"@wordpress/scripts": "^27.5.0"
+	},
+	"scripts": {
+		"lint:md:docs": "wp-scripts lint-md-docs",
+		"lint:pkg-json": "wp-scripts lint-pkg-json"
+	}
+}

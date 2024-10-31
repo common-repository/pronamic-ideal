@@ -1,0 +1,3201 @@
+{
+    "packages": [
+        {
+            "name": "automattic/jetpack-autoloader",
+            "version": "v3.1.0",
+            "version_normalized": "3.1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Automattic/jetpack-autoloader.git",
+                "reference": "0e36d60ad64e35b5dab7fa4757fadb2235d58f73"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Automattic/jetpack-autoloader/zipball/0e36d60ad64e35b5dab7fa4757fadb2235d58f73",
+                "reference": "0e36d60ad64e35b5dab7fa4757fadb2235d58f73",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.1 || ^2.0",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "automattic/jetpack-changelogger": "^4.2.6",
+                "composer/composer": "^1.1 || ^2.0",
+                "yoast/phpunit-polyfills": "^1.1.1"
+            },
+            "time": "2024-09-06T15:32:10+00:00",
+            "type": "composer-plugin",
+            "extra": {
+                "autotagger": true,
+                "class": "Automattic\\Jetpack\\Autoloader\\CustomAutoloaderPlugin",
+                "mirror-repo": "Automattic/jetpack-autoloader",
+                "changelogger": {
+                    "link-template": "https://github.com/Automattic/jetpack-autoloader/compare/v${old}...v${new}"
+                },
+                "version-constants": {
+                    "::VERSION": "src/AutoloadGenerator.php"
+                },
+                "branch-alias": {
+                    "dev-trunk": "3.1.x-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Automattic\\Jetpack\\Autoloader\\": "src"
+                },
+                "classmap": [
+                    "src/AutoloadGenerator.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Creates a custom autoloader for a plugin or theme.",
+            "keywords": [
+                "autoload",
+                "autoloader",
+                "composer",
+                "jetpack",
+                "plugin",
+                "wordpress"
+            ],
+            "support": {
+                "source": "https://github.com/Automattic/jetpack-autoloader/tree/v3.1.0"
+            },
+            "install-path": "../automattic/jetpack-autoloader"
+        },
+        {
+            "name": "composer/installers",
+            "version": "v2.3.0",
+            "version_normalized": "2.3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/installers.git",
+                "reference": "12fb2dfe5e16183de69e784a7b84046c43d97e8e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/installers/zipball/12fb2dfe5e16183de69e784a7b84046c43d97e8e",
+                "reference": "12fb2dfe5e16183de69e784a7b84046c43d97e8e",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0 || ^2.0",
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "composer/composer": "^1.10.27 || ^2.7",
+                "composer/semver": "^1.7.2 || ^3.4.0",
+                "phpstan/phpstan": "^1.11",
+                "phpstan/phpstan-phpunit": "^1",
+                "symfony/phpunit-bridge": "^7.1.1",
+                "symfony/process": "^5 || ^6 || ^7"
+            },
+            "time": "2024-06-24T20:46:46+00:00",
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Composer\\Installers\\Plugin",
+                "branch-alias": {
+                    "dev-main": "2.x-dev"
+                },
+                "plugin-modifies-install-path": true
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Composer\\Installers\\": "src/Composer/Installers"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle Robinson Young",
+                    "email": "kyle@dontkry.com",
+                    "homepage": "https://github.com/shama"
+                }
+            ],
+            "description": "A multi-framework Composer library installer",
+            "homepage": "https://composer.github.io/installers/",
+            "keywords": [
+                "Dolibarr",
+                "Eliasis",
+                "Hurad",
+                "ImageCMS",
+                "Kanboard",
+                "Lan Management System",
+                "MODX Evo",
+                "MantisBT",
+                "Mautic",
+                "Maya",
+                "OXID",
+                "Plentymarkets",
+                "Porto",
+                "RadPHP",
+                "SMF",
+                "Starbug",
+                "Thelia",
+                "Whmcs",
+                "WolfCMS",
+                "agl",
+                "annotatecms",
+                "attogram",
+                "bitrix",
+                "cakephp",
+                "chef",
+                "cockpit",
+                "codeigniter",
+                "concrete5",
+                "concreteCMS",
+                "croogo",
+                "dokuwiki",
+                "drupal",
+                "eZ Platform",
+                "elgg",
+                "expressionengine",
+                "fuelphp",
+                "grav",
+                "installer",
+                "itop",
+                "known",
+                "kohana",
+                "laravel",
+                "lavalite",
+                "lithium",
+                "magento",
+                "majima",
+                "mako",
+                "matomo",
+                "mediawiki",
+                "miaoxing",
+                "modulework",
+                "modx",
+                "moodle",
+                "osclass",
+                "pantheon",
+                "phpbb",
+                "piwik",
+                "ppi",
+                "processwire",
+                "puppet",
+                "pxcms",
+                "reindex",
+                "roundcube",
+                "shopware",
+                "silverstripe",
+                "sydes",
+                "sylius",
+                "tastyigniter",
+                "wordpress",
+                "yawik",
+                "zend",
+                "zikula"
+            ],
+            "support": {
+                "issues": "https://github.com/composer/installers/issues",
+                "source": "https://github.com/composer/installers/tree/v2.3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "./installers"
+        },
+        {
+            "name": "justinrainbow/json-schema",
+            "version": "5.3.0",
+            "version_normalized": "5.3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jsonrainbow/json-schema.git",
+                "reference": "feb2ca6dd1cebdaf1ed60a4c8de2e53ce11c4fd8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jsonrainbow/json-schema/zipball/feb2ca6dd1cebdaf1ed60a4c8de2e53ce11c4fd8",
+                "reference": "feb2ca6dd1cebdaf1ed60a4c8de2e53ce11c4fd8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "~2.2.20||~2.15.1",
+                "json-schema/json-schema-test-suite": "1.2.0",
+                "phpunit/phpunit": "^4.8.35"
+            },
+            "time": "2024-07-06T21:00:26+00:00",
+            "bin": [
+                "bin/validate-json"
+            ],
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "JsonSchema\\": "src/JsonSchema/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bruno Prieto Reis",
+                    "email": "bruno.p.reis@gmail.com"
+                },
+                {
+                    "name": "Justin Rainbow",
+                    "email": "justin.rainbow@gmail.com"
+                },
+                {
+                    "name": "Igor Wiedler",
+                    "email": "igor@wiedler.ch"
+                },
+                {
+                    "name": "Robert Schönthal",
+                    "email": "seroscho@googlemail.com"
+                }
+            ],
+            "description": "A library to validate a json schema.",
+            "homepage": "https://github.com/justinrainbow/json-schema",
+            "keywords": [
+                "json",
+                "schema"
+            ],
+            "support": {
+                "issues": "https://github.com/jsonrainbow/json-schema/issues",
+                "source": "https://github.com/jsonrainbow/json-schema/tree/5.3.0"
+            },
+            "install-path": "../justinrainbow/json-schema"
+        },
+        {
+            "name": "pronamic/icepay-soap-api",
+            "version": "2.5.3",
+            "version_normalized": "2.5.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/icepay-soap-api.git",
+                "reference": "0c517325a6fd55edf64fadfd50eacf044fb6055e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/icepay-soap-api/zipball/0c517325a6fd55edf64fadfd50eacf044fb6055e",
+                "reference": "0c517325a6fd55edf64fadfd50eacf044fb6055e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "time": "2015-09-17T08:32:44+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "ICEPAY library to integrate ICEPAY in your projects.",
+            "homepage": "https://icepay.com/",
+            "keywords": [
+                "afterpay",
+                "api",
+                "bancontact",
+                "banktransfer",
+                "creditcard",
+                "gateway",
+                "icepay",
+                "ideal",
+                "mistercash",
+                "payment",
+                "payments",
+                "paypal",
+                "paysafecard",
+                "phone",
+                "refund",
+                "service",
+                "sofort",
+                "sofortbanking",
+                "yourgift"
+            ],
+            "support": {
+                "issues": "https://github.com/icepay/icepay/issues",
+                "source": "https://github.com/icepay/icepay"
+            },
+            "install-path": "../pronamic/icepay-soap-api"
+        },
+        {
+            "name": "pronamic/ideal-issuers",
+            "version": "v1.1.0",
+            "version_normalized": "1.1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/ideal-issuers.git",
+                "reference": "97308288279d669ea2a6578b5f5be6a65f62b127"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/ideal-issuers/zipball/97308288279d669ea2a6578b5f5be6a65f62b127",
+                "reference": "97308288279d669ea2a6578b5f5be6a65f62b127",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.11",
+                "pronamic/wp-coding-standards": "^2.2",
+                "pronamic/wp-pay-logos": "dev-main"
+            },
+            "suggest": {
+                "pronamic/wp-pay-logos": "Add images to the iDEAL issuers"
+            },
+            "time": "2024-06-07T09:27:23+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\IDealIssuers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.nl"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/pronamic/ideal-issuers/issues",
+                "source": "https://github.com/pronamic/ideal-issuers/tree/v1.1.0"
+            },
+            "install-path": "../pronamic/ideal-issuers"
+        },
+        {
+            "name": "pronamic/pronamic-pay-admin-reports",
+            "version": "v1.0.0",
+            "version_normalized": "1.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/pronamic-pay-admin-reports.git",
+                "reference": "9c48bb49dbb3ac352239c5cd1e0fe467fa48dd94"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/pronamic-pay-admin-reports/zipball/9c48bb49dbb3ac352239c5cd1e0fe467fa48dd94",
+                "reference": "9c48bb49dbb3ac352239c5cd1e0fe467fa48dd94",
+                "shasum": ""
+            },
+            "require": {
+                "automattic/jetpack-autoloader": "^3.0",
+                "php": ">=8.1",
+                "pronamic/wp-money": "^2.4",
+                "woocommerce/action-scheduler": "^3.8",
+                "wp-pay/core": "^4.19"
+            },
+            "require-dev": {
+                "overtrue/phplint": "^9.1",
+                "php-coveralls/php-coveralls": "^2.7",
+                "php-stubs/woocommerce-stubs": "^8.7",
+                "php-stubs/wp-cli-stubs": "^2.10",
+                "phpmd/phpmd": "^2.15",
+                "phpstan/extension-installer": "^1.4",
+                "phpstan/phpstan": "^1.11",
+                "pronamic/pronamic-cli": "^1.1",
+                "pronamic/wp-coding-standards": "^2.2",
+                "roots/wordpress": "^6.4",
+                "szepeviktor/phpstan-wordpress": "^1.3",
+                "vimeo/psalm": "^0.3.14",
+                "wp-cli/wp-cli": "^2.10",
+                "wp-phpunit/wp-phpunit": "^6.4",
+                "yoast/phpunit-polyfills": "^2.0"
+            },
+            "time": "2024-06-17T10:04:54+00:00",
+            "type": "wordpress-plugin",
+            "extra": {
+                "installer-paths": {
+                    "packages/{$vendor}/{$name}": [
+                        "vendor:pronamic",
+                        "vendor:wp-pay",
+                        "vendor:wp-pay-extensions",
+                        "vendor:wp-pay-gateways",
+                        "woocommerce/action-scheduler"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\PronamicPayAdminReports\\": "php/classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "http://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Remco Tolsma",
+                    "email": "info@remcotolsma.nl",
+                    "homepage": "http://www.remcotolsma.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This plugin adds simple reporting functionality in the WordPress admin dashboard for the Pronamic Pay plugin.",
+            "homepage": "https://www.pronamicpay.com/",
+            "keywords": [
+                "pay",
+                "pronamic",
+                "report",
+                "reporting",
+                "reports",
+                "wordpress",
+                "wp",
+                "wp-admin"
+            ],
+            "support": {
+                "email": "support@wp-pay.org",
+                "issues": "https://github.com/pronamic/pronamic-pay-admin-reports/issues",
+                "source": "https://github.com/pronamic/pronamic-pay-admin-reports"
+            },
+            "install-path": "../../packages/pronamic/pronamic-pay-admin-reports"
+        },
+        {
+            "name": "pronamic/pronamic-wp-updater",
+            "version": "v1.0.2",
+            "version_normalized": "1.0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/pronamic-wp-updater.git",
+                "reference": "5dfbd527d7ffaac427ce9ed691cd0795609d4bf1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/pronamic-wp-updater/zipball/5dfbd527d7ffaac427ce9ed691cd0795609d4bf1",
+                "reference": "5dfbd527d7ffaac427ce9ed691cd0795609d4bf1",
+                "shasum": ""
+            },
+            "require": {
+                "automattic/jetpack-autoloader": "^3.0"
+            },
+            "require-dev": {
+                "pronamic/pronamic-cli": "^1.1",
+                "pronamic/wp-coding-standards": "^2.2"
+            },
+            "time": "2024-05-15T10:40:44+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Updater\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu"
+                }
+            ],
+            "description": "This WordPress plugin extends the WordPress update system with updates from Pronamic.",
+            "support": {
+                "issues": "https://github.com/pronamic/pronamic-wp-updater/issues",
+                "source": "https://github.com/pronamic/pronamic-wp-updater/tree/v1.0.2"
+            },
+            "install-path": "../../packages/pronamic/pronamic-wp-updater"
+        },
+        {
+            "name": "pronamic/wp-datetime",
+            "version": "v2.1.7",
+            "version_normalized": "2.1.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-datetime.git",
+                "reference": "2dcc158beff33f27611a7d5ec4bf0fd658a0a42f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-datetime/zipball/2dcc158beff33f27611a7d5ec4bf0fd658a0a42f",
+                "reference": "2dcc158beff33f27611a7d5ec4bf0fd658a0a42f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "automattic/wordbless": "^0.4.1",
+                "bamarni/composer-bin-plugin": "^1.4",
+                "koodimonni-language/de_de": "*",
+                "koodimonni-language/en_gb": "*",
+                "koodimonni-language/fr_fr": "*",
+                "koodimonni-language/ja": "*",
+                "koodimonni-language/nl_nl": "*",
+                "overtrue/phplint": "^9.0",
+                "php-coveralls/php-coveralls": "^2.4",
+                "php-stubs/wordpress-globals": "^0.2.0",
+                "phpmd/phpmd": "^2.9",
+                "pronamic/pronamic-cli": "^1.1",
+                "pronamic/wp-coding-standards": "^2.0",
+                "roots/wordpress": "^6.0",
+                "yoast/phpunit-polyfills": "^2.0"
+            },
+            "time": "2023-10-30T10:15:01+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\DateTime\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "description": "WordPress DateTime library.",
+            "support": {
+                "issues": "https://github.com/pronamic/wp-datetime/issues",
+                "source": "https://github.com/pronamic/wp-datetime/tree/v2.1.7"
+            },
+            "install-path": "../../packages/pronamic/wp-datetime"
+        },
+        {
+            "name": "pronamic/wp-gravityforms-nl",
+            "version": "v3.0.9",
+            "version_normalized": "3.0.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-gravityforms-nl.git",
+                "reference": "38617a704499243e9675ab0e15ce60a3d1d255f8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-gravityforms-nl/zipball/38617a704499243e9675ab0e15ce60a3d1d255f8",
+                "reference": "38617a704499243e9675ab0e15ce60a3d1d255f8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.8",
+                "koodimonni-language/nl_nl": "*",
+                "php-coveralls/php-coveralls": "^2.7",
+                "phpmd/phpmd": "^2.15",
+                "pronamic/pronamic-cli": "^1.1",
+                "pronamic/wp-coding-standards": "^2.2",
+                "roots/wordpress": "^6.4",
+                "wp-phpunit/wp-phpunit": "^6.4",
+                "yoast/phpunit-polyfills": "^2.0"
+            },
+            "time": "2024-03-26T12:38:13+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\GravityFormsNL\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "description": "WordPress Gravity Forms (nl) library.",
+            "support": {
+                "issues": "https://github.com/pronamic/wp-gravityforms-nl/issues",
+                "source": "https://github.com/pronamic/wp-gravityforms-nl/tree/v3.0.9"
+            },
+            "install-path": "../../packages/pronamic/wp-gravityforms-nl"
+        },
+        {
+            "name": "pronamic/wp-html",
+            "version": "v2.2.1",
+            "version_normalized": "2.2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-html.git",
+                "reference": "081b0d645522f73ccb67ff68e01ed3febfccb7f1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-html/zipball/081b0d645522f73ccb67ff68e01ed3febfccb7f1",
+                "reference": "081b0d645522f73ccb67ff68e01ed3febfccb7f1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "automattic/wordbless": "^0.4.1",
+                "bamarni/composer-bin-plugin": "^1.8",
+                "php-coveralls/php-coveralls": "^2.6",
+                "php-stubs/wordpress-globals": "^0.2.0",
+                "phpmd/phpmd": "^2.14",
+                "pronamic/pronamic-cli": "^1.1",
+                "pronamic/wp-coding-standards": "^2.0",
+                "roots/wordpress": "^6.0",
+                "yoast/phpunit-polyfills": "^2.0"
+            },
+            "time": "2023-10-30T09:28:01+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Html\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "WordPress HTML library.",
+            "support": {
+                "issues": "https://github.com/pronamic/wp-html/issues",
+                "source": "https://github.com/pronamic/wp-html/tree/v2.2.1"
+            },
+            "install-path": "../../packages/pronamic/wp-html"
+        },
+        {
+            "name": "pronamic/wp-http",
+            "version": "v1.2.3",
+            "version_normalized": "1.2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-http.git",
+                "reference": "1f080f7ef4f134c3c4bbce023676e17eafa4e840"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-http/zipball/1f080f7ef4f134c3c4bbce023676e17eafa4e840",
+                "reference": "1f080f7ef4f134c3c4bbce023676e17eafa4e840",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "automattic/wordbless": "^0.3 || ^0.4",
+                "bamarni/composer-bin-plugin": "^1.4",
+                "php-coveralls/php-coveralls": "^2.4",
+                "phpmd/phpmd": "^2.9",
+                "pronamic/pronamic-cli": "^1.1",
+                "pronamic/wp-coding-standards": "^2.2",
+                "roots/wordpress": "^6.0",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "time": "2024-05-15T13:24:39+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Http\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "WordPress HTTP library.",
+            "support": {
+                "issues": "https://github.com/pronamic/wp-http/issues",
+                "source": "https://github.com/pronamic/wp-http/tree/v1.2.3"
+            },
+            "install-path": "../../packages/pronamic/wp-http"
+        },
+        {
+            "name": "pronamic/wp-mollie",
+            "version": "v1.6.0",
+            "version_normalized": "1.6.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-mollie.git",
+                "reference": "14b1ff530a54cf2c30367238d47fff293792a39c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-mollie/zipball/14b1ff530a54cf2c30367238d47fff293792a39c",
+                "reference": "14b1ff530a54cf2c30367238d47fff293792a39c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=8.0",
+                "pronamic/wp-http": "^1.2",
+                "pronamic/wp-money": "^2.4",
+                "pronamic/wp-number": "^1.3"
+            },
+            "require-dev": {
+                "automattic/wordbless": "^0.4.0",
+                "bamarni/composer-bin-plugin": "^1.8",
+                "php-coveralls/php-coveralls": "^2.4",
+                "phpmd/phpmd": "^2.13",
+                "pronamic/pronamic-cli": "^1.1",
+                "pronamic/wp-coding-standards": "^2.1",
+                "roots/wordpress": "^6.0",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "time": "2024-05-27T12:06:07+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Mollie\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu"
+                }
+            ],
+            "description": "Mollie library for WordPress.",
+            "support": {
+                "issues": "https://github.com/pronamic/wp-mollie/issues",
+                "source": "https://github.com/pronamic/wp-mollie/tree/v1.6.0"
+            },
+            "install-path": "../../packages/pronamic/wp-mollie"
+        },
+        {
+            "name": "pronamic/wp-money",
+            "version": "v2.4.3",
+            "version_normalized": "2.4.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-money.git",
+                "reference": "31e4a617b803306b6b50a8a006c26192c62318a8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-money/zipball/31e4a617b803306b6b50a8a006c26192c62318a8",
+                "reference": "31e4a617b803306b6b50a8a006c26192c62318a8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "pronamic/wp-number": "^1.3"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.4",
+                "koodimonni-language/de_de": "*",
+                "koodimonni-language/fr_fr": "*",
+                "koodimonni-language/nl_nl": "*",
+                "overtrue/phplint": "^9.0",
+                "php-coveralls/php-coveralls": "^2.4",
+                "phpmd/phpmd": "^2.4",
+                "pronamic/pronamic-cli": "^1.1",
+                "pronamic/wp-coding-standards": "^1.3",
+                "roots/wordpress": "^6.0",
+                "vlucas/phpdotenv": "^2.0",
+                "wp-phpunit/wp-phpunit": "^6.1",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "time": "2023-11-06T14:07:57+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Money\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "description": "WordPress Money library.",
+            "support": {
+                "issues": "https://github.com/pronamic/wp-money/issues",
+                "source": "https://github.com/pronamic/wp-money/tree/v2.4.3"
+            },
+            "install-path": "../../packages/pronamic/wp-money"
+        },
+        {
+            "name": "pronamic/wp-number",
+            "version": "v1.3.2",
+            "version_normalized": "1.3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-number.git",
+                "reference": "82b5af7c20391ca654d2c7ab8d03574088b97e79"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-number/zipball/82b5af7c20391ca654d2c7ab8d03574088b97e79",
+                "reference": "82b5af7c20391ca654d2c7ab8d03574088b97e79",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.4",
+                "koodimonni-language/de_de": "*",
+                "koodimonni-language/fr_fr": "*",
+                "koodimonni-language/nl_nl": "*",
+                "overtrue/phplint": "^4.5",
+                "php-coveralls/php-coveralls": "^2.5",
+                "phpmd/phpmd": "^2.13",
+                "phpstan/phpstan": "^1.11",
+                "pronamic/pronamic-cli": "^1.1",
+                "pronamic/wp-coding-standards": "^2.2",
+                "roots/wordpress": "^6.0",
+                "szepeviktor/phpstan-wordpress": "^1.3",
+                "vimeo/psalm": "^5.24",
+                "wp-phpunit/wp-phpunit": "^6.1",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "time": "2024-06-07T11:50:05+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Number\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "https://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Remco Tolsma",
+                    "email": "info@remcotolsma.nl",
+                    "homepage": "https://www.remcotolsma.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "WordPress Number library.",
+            "keywords": [
+                "Double",
+                "calculator",
+                "float",
+                "i18n",
+                "int",
+                "number",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/pronamic/wp-number/issues",
+                "source": "https://github.com/pronamic/wp-number/tree/v1.3.2"
+            },
+            "install-path": "../../packages/pronamic/wp-number"
+        },
+        {
+            "name": "pronamic/wp-pay-logos",
+            "version": "v2.2.1",
+            "version_normalized": "2.2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pay-logos.git",
+                "reference": "a8294c4772d16e7ba58fd7d2499da7a46f877362"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pay-logos/zipball/a8294c4772d16e7ba58fd7d2499da7a46f877362",
+                "reference": "a8294c4772d16e7ba58fd7d2499da7a46f877362",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "symfony/console": "^5.1",
+                "symfony/filesystem": "^5.1",
+                "symfony/finder": "^5.1"
+            },
+            "time": "2024-06-19T12:48:01+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WpPayLogos\\": "php/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.nl"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/pronamic/wp-pay-logos/issues",
+                "source": "https://github.com/pronamic/wp-pay-logos/tree/v2.2.1"
+            },
+            "install-path": "../pronamic/wp-pay-logos"
+        },
+        {
+            "name": "pronamic/wp-pronamic-pay-forms",
+            "version": "v1.1.2",
+            "version_normalized": "1.1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pronamic-pay-forms.git",
+                "reference": "1d40ea2624355f53656550eb2643497f12f21125"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pronamic-pay-forms/zipball/1d40ea2624355f53656550eb2643497f12f21125",
+                "reference": "1d40ea2624355f53656550eb2643497f12f21125",
+                "shasum": ""
+            },
+            "require": {
+                "wp-pay/core": "^4.10"
+            },
+            "require-dev": {
+                "pronamic/pronamic-cli": "^1.0",
+                "pronamic/wp-coding-standards": "^1.3"
+            },
+            "time": "2024-03-26T10:34:18+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Pay\\Forms\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu"
+                }
+            ],
+            "description": "The Pronamic Pay forms module.",
+            "support": {
+                "issues": "https://github.com/pronamic/wp-pronamic-pay-forms/issues",
+                "source": "https://github.com/pronamic/wp-pronamic-pay-forms/tree/v1.1.2"
+            },
+            "install-path": "../../packages/pronamic/wp-pronamic-pay-forms"
+        },
+        {
+            "name": "viison/address-splitter",
+            "version": "0.3.4",
+            "version_normalized": "0.3.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pickware/address-splitter.git",
+                "reference": "ebad709276aaadce94a3a1fe2507aa38a467a94a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pickware/address-splitter/zipball/ebad709276aaadce94a3a1fe2507aa38a467a94a",
+                "reference": "ebad709276aaadce94a3a1fe2507aa38a467a94a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "time": "2019-10-24T09:23:47+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "VIISON\\AddressSplitter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "VIISON GmbH",
+                    "email": "contact@viison.com"
+                }
+            ],
+            "description": "Tries to split an address line into street name, house number and other additional information like building, apartment information etc.",
+            "support": {
+                "issues": "https://github.com/pickware/address-splitter/issues",
+                "source": "https://github.com/pickware/address-splitter/tree/0.3.4"
+            },
+            "install-path": "../viison/address-splitter"
+        },
+        {
+            "name": "woocommerce/action-scheduler",
+            "version": "3.8.2",
+            "version_normalized": "3.8.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/woocommerce/action-scheduler.git",
+                "reference": "2bc91d88fdbc2c07ab899cbb56b983e11e62cf69"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/woocommerce/action-scheduler/zipball/2bc91d88fdbc2c07ab899cbb56b983e11e62cf69",
+                "reference": "2bc91d88fdbc2c07ab899cbb56b983e11e62cf69",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.5",
+                "woocommerce/woocommerce-sniffs": "0.1.0",
+                "wp-cli/wp-cli": "~2.5.0",
+                "yoast/phpunit-polyfills": "^2.0"
+            },
+            "time": "2024-09-12T23:12:58+00:00",
+            "type": "wordpress-plugin",
+            "extra": {
+                "scripts-description": {
+                    "test": "Run unit tests",
+                    "phpcs": "Analyze code against the WordPress coding standards with PHP_CodeSniffer",
+                    "phpcbf": "Fix coding standards warnings/errors automatically with PHP Code Beautifier"
+                }
+            },
+            "installation-source": "dist",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "description": "Action Scheduler for WordPress and WooCommerce",
+            "homepage": "https://actionscheduler.org/",
+            "support": {
+                "issues": "https://github.com/woocommerce/action-scheduler/issues",
+                "source": "https://github.com/woocommerce/action-scheduler/tree/3.8.2"
+            },
+            "install-path": "../../packages/woocommerce/action-scheduler"
+        },
+        {
+            "name": "wp-pay-extensions/charitable",
+            "version": "v4.3.3",
+            "version_normalized": "4.3.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pronamic-pay-charitable.git",
+                "reference": "4d769ae4519582bf53ff6ce05da02397392282be"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pronamic-pay-charitable/zipball/4d769ae4519582bf53ff6ce05da02397392282be",
+                "reference": "4d769ae4519582bf53ff6ce05da02397392282be",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "wp-pay/core": "^4.9"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.4",
+                "php-coveralls/php-coveralls": "^2.5",
+                "phpmd/phpmd": "^2.9",
+                "pronamic/pronamic-cli": "^1.0",
+                "pronamic/wp-coding-standards": "^1.3",
+                "roots/wordpress": "^6.0",
+                "wp-phpunit/wp-phpunit": "^6.1",
+                "wpackagist-plugin/charitable": "^1.7",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "time": "2023-06-01T10:13:23+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Pay\\Extensions\\Charitable\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "http://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Remco Tolsma",
+                    "email": "info@remcotolsma.nl",
+                    "homepage": "http://www.remcotolsma.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Charitable driver for the WordPress payment processing library.",
+            "homepage": "http://www.wp-pay.org/extensions/charitable/",
+            "keywords": [
+                "charitable",
+                "extension",
+                "pay",
+                "pronamic",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "email": "support@wp-pay.org",
+                "issues": "https://github.com/wp-pay-extensions/charitable/issues",
+                "source": "https://github.com/wp-pay-extensions/charitable"
+            },
+            "install-path": "../../packages/wp-pay-extensions/charitable"
+        },
+        {
+            "name": "wp-pay-extensions/contact-form-7",
+            "version": "v3.6.0",
+            "version_normalized": "3.6.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pronamic-pay-contact-form-7.git",
+                "reference": "ab3a1d766b0c23eebecbfb883ac392b628197254"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pronamic-pay-contact-form-7/zipball/ab3a1d766b0c23eebecbfb883ac392b628197254",
+                "reference": "ab3a1d766b0c23eebecbfb883ac392b628197254",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=8.1",
+                "wp-pay/core": "^4.22"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.8",
+                "overtrue/phplint": "^9.0",
+                "php-coveralls/php-coveralls": "^2.7",
+                "phpmd/phpmd": "^2.15",
+                "phpstan/phpstan": "^1.11",
+                "pronamic/pronamic-cli": "^1.1",
+                "pronamic/wp-coding-standards": "^2.2",
+                "roots/wordpress": "^6.4",
+                "szepeviktor/phpstan-wordpress": "^1.3",
+                "vimeo/psalm": "^5.25",
+                "wp-cli/wp-cli-bundle": "^2.10",
+                "wp-phpunit/wp-phpunit": "^6.4",
+                "wpackagist-plugin/contact-form-7": "^5.9",
+                "yoast/phpunit-polyfills": "^2.0"
+            },
+            "time": "2024-09-27T13:45:29+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Pay\\Extensions\\ContactForm7\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "http://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Remco Tolsma",
+                    "email": "info@remcotolsma.nl",
+                    "homepage": "http://www.remcotolsma.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Contact Form 7 driver for the WordPress payment processing library.",
+            "homepage": "http://www.wp-pay.org/extensions/contact-form-7/",
+            "keywords": [
+                "contact-form-7",
+                "extension",
+                "gateway",
+                "pay",
+                "payments",
+                "pronamic",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "email": "support@wp-pay.org",
+                "issues": "https://github.com/wp-pay-extensions/contact-form-7/issues",
+                "source": "https://github.com/wp-pay-extensions/contact-form-7/"
+            },
+            "install-path": "../../packages/wp-pay-extensions/contact-form-7"
+        },
+        {
+            "name": "wp-pay-extensions/easy-digital-downloads",
+            "version": "v4.3.5",
+            "version_normalized": "4.3.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pronamic-pay-easy-digital-downloads.git",
+                "reference": "7864ee66f263d8c15914cbf0b9362476a4921dce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pronamic-pay-easy-digital-downloads/zipball/7864ee66f263d8c15914cbf0b9362476a4921dce",
+                "reference": "7864ee66f263d8c15914cbf0b9362476a4921dce",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0",
+                "wp-pay/core": "^4.16"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.8",
+                "php-coveralls/php-coveralls": "^2.7",
+                "phpmd/phpmd": "^2.15",
+                "pronamic/pronamic-cli": "^1.1",
+                "pronamic/wp-coding-standards": "^2.2",
+                "roots/wordpress": "^6.4",
+                "wp-phpunit/wp-phpunit": "^6.4",
+                "wpackagist-plugin/easy-digital-downloads": "^3.2",
+                "wpackagist-plugin/wordpress-seo": "^22.3",
+                "yoast/phpunit-polyfills": "^2.0"
+            },
+            "time": "2024-03-26T11:21:45+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Pay\\Extensions\\EasyDigitalDownloads\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "http://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Remco Tolsma",
+                    "email": "info@remcotolsma.nl",
+                    "homepage": "http://www.remcotolsma.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Easy Digital Downloads driver for the WordPress payment processing library.",
+            "homepage": "http://www.wp-pay.org/extensions/easy-digital-downloads/",
+            "keywords": [
+                "digital",
+                "downlaods",
+                "easy",
+                "edd",
+                "extension",
+                "pay",
+                "pronamic",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "email": "support@wp-pay.org",
+                "issues": "https://github.com/wp-pay-extensions/easy-digital-downloads/issues",
+                "source": "https://github.com/wp-pay-extensions/easy-digital-downloads"
+            },
+            "install-path": "../../packages/wp-pay-extensions/easy-digital-downloads"
+        },
+        {
+            "name": "wp-pay-extensions/event-espresso",
+            "version": "v4.3.1",
+            "version_normalized": "4.3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pronamic-pay-event-espresso.git",
+                "reference": "a37ccefe83f3cc7ee00d0d8f913064e0fe03b7a7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pronamic-pay-event-espresso/zipball/a37ccefe83f3cc7ee00d0d8f913064e0fe03b7a7",
+                "reference": "a37ccefe83f3cc7ee00d0d8f913064e0fe03b7a7",
+                "shasum": ""
+            },
+            "require": {
+                "automattic/jetpack-autoloader": "^3.0",
+                "composer/installers": "^2.2",
+                "php": ">=8.0",
+                "woocommerce/action-scheduler": "^3.8",
+                "wp-pay/core": "^4.16"
+            },
+            "require-dev": {
+                "php-coveralls/php-coveralls": "^2.7",
+                "phpmd/phpmd": "^2.15",
+                "phpstan/extension-installer": "^1.4",
+                "phpstan/phpstan": "^1.11",
+                "pronamic/pronamic-cli": "^1.1",
+                "pronamic/wp-coding-standards": "^2.2",
+                "roots/wordpress": "^6.4",
+                "szepeviktor/phpstan-wordpress": "^1.3",
+                "vimeo/psalm": "^5.24",
+                "wp-pay-gateways/mollie": "^4.11",
+                "wp-phpunit/wp-phpunit": "^6.4",
+                "yoast/phpunit-polyfills": "^2.0"
+            },
+            "time": "2024-06-19T12:56:51+00:00",
+            "type": "wordpress-plugin",
+            "extra": {
+                "installer-paths": {
+                    "packages/{$vendor}/{$name}": [
+                        "pronamic/wp-datetime",
+                        "pronamic/wp-gravityforms-nl",
+                        "pronamic/wp-html",
+                        "pronamic/wp-http",
+                        "pronamic/wp-mollie",
+                        "pronamic/wp-money",
+                        "pronamic/wp-number",
+                        "vendor:wp-pay",
+                        "vendor:wp-pay-extensions",
+                        "vendor:wp-pay-gateways",
+                        "woocommerce/action-scheduler"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Pay\\Extensions\\EventEspresso\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "http://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Remco Tolsma",
+                    "email": "info@remcotolsma.nl",
+                    "homepage": "http://www.remcotolsma.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Event Espresso driver for the WordPress payment processing library.",
+            "homepage": "http://www.wp-pay.org/extensions/event-espresso/",
+            "keywords": [
+                "espresso",
+                "event",
+                "event-espresso",
+                "events",
+                "extension",
+                "pay",
+                "pronamic",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "email": "support@wp-pay.org",
+                "issues": "https://github.com/wp-pay-extensions/event-espresso/issues",
+                "source": "https://github.com/wp-pay-extensions/event-espresso"
+            },
+            "install-path": "../../packages/wp-pay-extensions/event-espresso"
+        },
+        {
+            "name": "wp-pay-extensions/formidable-forms",
+            "version": "v4.4.2",
+            "version_normalized": "4.4.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pronamic-pay-formidable-forms.git",
+                "reference": "d22491f07308aea2b8e7715d9c076054033d3268"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pronamic-pay-formidable-forms/zipball/d22491f07308aea2b8e7715d9c076054033d3268",
+                "reference": "d22491f07308aea2b8e7715d9c076054033d3268",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "wp-pay/core": "^4.6"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.4",
+                "php-coveralls/php-coveralls": "^2.5",
+                "phpmd/phpmd": "^2.7",
+                "pronamic/pronamic-cli": "^1.0",
+                "pronamic/wp-coding-standards": "^1.3",
+                "roots/wordpress": "^6.0",
+                "wp-phpunit/wp-phpunit": "^6.1",
+                "wpackagist-plugin/formidable": "^5.0",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "time": "2023-12-18T13:45:17+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Pay\\Extensions\\FormidableForms\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "http://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Remco Tolsma",
+                    "email": "info@remcotolsma.nl",
+                    "homepage": "http://www.remcotolsma.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Formidable Forms driver for the WordPress payment processing library.",
+            "homepage": "http://www.wp-pay.org/extensions/formidable-forms/",
+            "keywords": [
+                "Forms",
+                "extension",
+                "formidable",
+                "pay",
+                "pronamic",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "email": "support@wp-pay.org",
+                "issues": "https://github.com/wp-pay-extensions/formidable-forms/issues",
+                "source": "https://github.com/wp-pay-extensions/formidable-forms"
+            },
+            "install-path": "../../packages/wp-pay-extensions/formidable-forms"
+        },
+        {
+            "name": "wp-pay-extensions/give",
+            "version": "v4.2.3",
+            "version_normalized": "4.2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pronamic-pay-give.git",
+                "reference": "1327c3416bdc512fa83a617c044e07ef4be20684"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pronamic-pay-give/zipball/1327c3416bdc512fa83a617c044e07ef4be20684",
+                "reference": "1327c3416bdc512fa83a617c044e07ef4be20684",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "wp-pay/core": "^4.6"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.4",
+                "php-coveralls/php-coveralls": "^2.5",
+                "phpmd/phpmd": "^2.7",
+                "pronamic/pronamic-cli": "^1.0",
+                "pronamic/wp-coding-standards": "^1.3",
+                "roots/wordpress": "^6.0",
+                "wp-phpunit/wp-phpunit": "^6.1",
+                "wpackagist-plugin/give": "^2.9",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "time": "2023-06-01T10:19:08+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Pay\\Extensions\\Give\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "http://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Remco Tolsma",
+                    "email": "info@remcotolsma.nl",
+                    "homepage": "http://www.remcotolsma.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Give driver for the WordPress payment processing library.",
+            "homepage": "http://www.wp-pay.org/extensions/give/",
+            "keywords": [
+                "extension",
+                "give",
+                "pay",
+                "pronamic",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "email": "support@wp-pay.org",
+                "issues": "https://github.com/wp-pay-extensions/give/issues",
+                "source": "https://github.com/wp-pay-extensions/give"
+            },
+            "install-path": "../../packages/wp-pay-extensions/give"
+        },
+        {
+            "name": "wp-pay-extensions/gravityforms",
+            "version": "v4.8.0",
+            "version_normalized": "4.8.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pronamic-pay-gravityforms.git",
+                "reference": "2200b1e0d275f3207326e3fcbb925a5c2b16bc1d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pronamic-pay-gravityforms/zipball/2200b1e0d275f3207326e3fcbb925a5c2b16bc1d",
+                "reference": "2200b1e0d275f3207326e3fcbb925a5c2b16bc1d",
+                "shasum": ""
+            },
+            "require": {
+                "automattic/jetpack-autoloader": "^3.0",
+                "composer/installers": "^2.2",
+                "php": ">=8.1",
+                "pronamic/ideal-issuers": "^1.1",
+                "pronamic/wp-datetime": "^2.1",
+                "pronamic/wp-gravityforms-nl": "^3.0",
+                "pronamic/wp-money": "^2.4",
+                "pronamic/wp-number": "^1.3",
+                "pronamic/wp-pay-logos": "^2.2",
+                "woocommerce/action-scheduler": "^3.7",
+                "wp-pay/core": "^4.19"
+            },
+            "require-dev": {
+                "php-coveralls/php-coveralls": "^2.7",
+                "phpmd/phpmd": "^2.15",
+                "phpstan/extension-installer": "^1.3",
+                "phpstan/phpstan": "^1.11",
+                "pronamic/gravityforms": "^2.8",
+                "pronamic/pronamic-cli": "^1.1",
+                "pronamic/wp-coding-standards": "^2.2",
+                "pronamic/wp-documentor": "^1.4",
+                "roots/wordpress": "^6.0",
+                "szepeviktor/phpstan-wordpress": "^1.3",
+                "vimeo/psalm": "^5.24",
+                "wp-pay-gateways/mollie": "^4.12",
+                "wp-phpunit/wp-phpunit": "^6.4",
+                "yoast/phpunit-polyfills": "^2.0"
+            },
+            "time": "2024-06-07T12:19:35+00:00",
+            "type": "wordpress-plugin",
+            "extra": {
+                "installer-paths": {
+                    "packages/{$vendor}/{$name}": [
+                        "pronamic/wp-datetime",
+                        "pronamic/wp-gravityforms-nl",
+                        "pronamic/wp-html",
+                        "pronamic/wp-http",
+                        "pronamic/wp-mollie",
+                        "pronamic/wp-money",
+                        "pronamic/wp-number",
+                        "vendor:wp-pay",
+                        "vendor:wp-pay-extensions",
+                        "vendor:wp-pay-gateways",
+                        "woocommerce/action-scheduler"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Pay\\Extensions\\GravityForms\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "http://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Remco Tolsma",
+                    "email": "info@remcotolsma.nl",
+                    "homepage": "http://www.remcotolsma.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Gravity Forms driver for the WordPress payment processing library.",
+            "homepage": "http://www.wp-pay.org/extensions/gravityforms/",
+            "keywords": [
+                "extension",
+                "gravityforms",
+                "pay",
+                "pronamic",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "email": "support@wp-pay.org",
+                "issues": "https://github.com/wp-pay-extensions/gravityforms/issues",
+                "source": "https://github.com/wp-pay-extensions/gravityforms"
+            },
+            "install-path": "../../packages/wp-pay-extensions/gravityforms"
+        },
+        {
+            "name": "wp-pay-extensions/memberpress",
+            "version": "v4.8.1",
+            "version_normalized": "4.8.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pronamic-pay-memberpress.git",
+                "reference": "59d35141d20ef2542bd72e29fc1a412e2cefca47"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pronamic-pay-memberpress/zipball/59d35141d20ef2542bd72e29fc1a412e2cefca47",
+                "reference": "59d35141d20ef2542bd72e29fc1a412e2cefca47",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "woocommerce/action-scheduler": "^3.4",
+                "wp-pay/core": "^4.9"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.4",
+                "php-coveralls/php-coveralls": "^2.5",
+                "php-stubs/wp-cli-stubs": "^2.10",
+                "phpmd/phpmd": "^2.7",
+                "phpstan/phpstan": "^1.11",
+                "pronamic/memberpress": "^1.9",
+                "pronamic/pronamic-cli": "^1.0",
+                "pronamic/wp-coding-standards": "^2.0",
+                "roots/wordpress": "^6.0",
+                "szepeviktor/phpstan-wordpress": "^1.3",
+                "vimeo/psalm": "^5.25",
+                "wp-cli/wp-cli": "^2.5",
+                "wp-phpunit/wp-phpunit": "^6.1",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "time": "2024-09-27T14:05:46+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Pay\\Extensions\\MemberPress\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "http://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Remco Tolsma",
+                    "email": "info@remcotolsma.nl",
+                    "homepage": "http://www.remcotolsma.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "MemberPress driver for the WordPress payment processing library.",
+            "homepage": "http://www.wp-pay.org/extensions/memberpress/",
+            "keywords": [
+                "extension",
+                "memberpress",
+                "pay",
+                "pronamic",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "email": "support@wp-pay.org",
+                "issues": "https://github.com/wp-pay-extensions/memberpress/issues",
+                "source": "https://github.com/wp-pay-extensions/memberpress"
+            },
+            "install-path": "../../packages/wp-pay-extensions/memberpress"
+        },
+        {
+            "name": "wp-pay-extensions/ninjaforms",
+            "version": "v3.3.2",
+            "version_normalized": "3.3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pronamic-pay-ninjaforms.git",
+                "reference": "e927f4dc7222971a748bebc0f50ae1b0f7a9c1c6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pronamic-pay-ninjaforms/zipball/e927f4dc7222971a748bebc0f50ae1b0f7a9c1c6",
+                "reference": "e927f4dc7222971a748bebc0f50ae1b0f7a9c1c6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0",
+                "wp-pay/core": "^4.16"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.8",
+                "overtrue/phplint": "^9.1",
+                "php-coveralls/php-coveralls": "^2.7",
+                "phpmd/phpmd": "^2.15",
+                "pronamic/pronamic-cli": "^1.1",
+                "pronamic/wp-coding-standards": "^2.2",
+                "roots/wordpress": "^6.4",
+                "wp-phpunit/wp-phpunit": "^6.4",
+                "wpackagist-plugin/ninja-forms": "^3.8",
+                "yoast/phpunit-polyfills": "^2.0"
+            },
+            "time": "2024-03-26T11:52:32+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Pay\\Extensions\\NinjaForms\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "http://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Ruben Droogh",
+                    "homepage": "http://www.rubendroogh.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Ninja Forms driver for the WordPress payment processing library.",
+            "keywords": [
+                "Forms",
+                "extension",
+                "ninja",
+                "pay",
+                "pronamic",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "email": "support@wp-pay.org",
+                "issues": "https://github.com/wp-pay-extensions/ninjaforms/issues",
+                "source": "https://github.com/wp-pay-extensions/ninjaforms"
+            },
+            "install-path": "../../packages/wp-pay-extensions/ninjaforms"
+        },
+        {
+            "name": "wp-pay-extensions/restrict-content-pro",
+            "version": "v4.6.2",
+            "version_normalized": "4.6.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pronamic-pay-restrict-content-pro.git",
+                "reference": "defd20f0a4cf405feb67293847be4e039df6a795"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pronamic-pay-restrict-content-pro/zipball/defd20f0a4cf405feb67293847be4e039df6a795",
+                "reference": "defd20f0a4cf405feb67293847be4e039df6a795",
+                "shasum": ""
+            },
+            "require": {
+                "automattic/jetpack-autoloader": "^3.0",
+                "php": ">=8.1",
+                "pronamic/wp-money": "^2.2",
+                "woocommerce/action-scheduler": "^3.7",
+                "wp-pay-gateways/mollie": "^4.10",
+                "wp-pay/core": "^4.17"
+            },
+            "require-dev": {
+                "php-coveralls/php-coveralls": "^2.5",
+                "phpmd/phpmd": "^2.7",
+                "phpstan/extension-installer": "^1.3",
+                "phpstan/phpstan": "^1.11",
+                "pronamic/pronamic-cli": "^1.0",
+                "pronamic/wp-coding-standards": "^2.1",
+                "roots/wordpress": "^6.0",
+                "szepeviktor/phpstan-wordpress": "^1.3",
+                "vimeo/psalm": "^5.24",
+                "wp-cli/wp-cli": "^2.10",
+                "wp-phpunit/wp-phpunit": "^6.5",
+                "wpackagist-plugin/restrict-content": "^3.2",
+                "yoast/phpunit-polyfills": "^2.0"
+            },
+            "time": "2024-09-27T13:55:19+00:00",
+            "type": "wordpress-plugin",
+            "extra": {
+                "installer-paths": {
+                    "packages/{$vendor}/{$name}": [
+                        "vendor:pronamic",
+                        "vendor:wp-pay",
+                        "vendor:wp-pay-extensions",
+                        "vendor:wp-pay-gateways",
+                        "woocommerce/action-scheduler"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Pay\\Extensions\\RestrictContent\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "http://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Remco Tolsma",
+                    "email": "info@remcotolsma.nl",
+                    "homepage": "http://www.remcotolsma.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Restrict Content (Pro) driver for the WordPress payment processing library.",
+            "homepage": "http://www.wp-pay.org/extensions/restrict-content-pro/",
+            "keywords": [
+                "content",
+                "extension",
+                "pay",
+                "pro",
+                "pronamic",
+                "restrict",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "email": "support@wp-pay.org",
+                "issues": "https://github.com/wp-pay-extensions/restrict-content-pro/issues",
+                "source": "https://github.com/wp-pay-extensions/restrict-content-pro"
+            },
+            "install-path": "../../packages/wp-pay-extensions/restrict-content-pro"
+        },
+        {
+            "name": "wp-pay-extensions/woocommerce",
+            "version": "v4.9.1",
+            "version_normalized": "4.9.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pronamic-pay-woocommerce.git",
+                "reference": "d1d004f9cf01a759147948d3060919c0fe6bf2d8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pronamic-pay-woocommerce/zipball/d1d004f9cf01a759147948d3060919c0fe6bf2d8",
+                "reference": "d1d004f9cf01a759147948d3060919c0fe6bf2d8",
+                "shasum": ""
+            },
+            "require": {
+                "automattic/jetpack-autoloader": "^3.0",
+                "php": ">=8.1",
+                "pronamic/wp-html": "^2.2",
+                "woocommerce/action-scheduler": "^3.7",
+                "wp-pay/core": "^4.19"
+            },
+            "require-dev": {
+                "overtrue/phplint": "^9.1",
+                "php-coveralls/php-coveralls": "^2.7",
+                "php-stubs/woocommerce-stubs": "^8.7",
+                "php-stubs/wp-cli-stubs": "^2.10",
+                "phpmd/phpmd": "^2.15",
+                "phpstan/extension-installer": "^1.4",
+                "phpstan/phpstan": "^1.11",
+                "pronamic/pronamic-cli": "^1.1",
+                "pronamic/woocommerce-subscriptions": "^6.0",
+                "pronamic/wp-coding-standards": "^2.2",
+                "roots/wordpress": "^6.4",
+                "szepeviktor/phpstan-wordpress": "^1.3",
+                "vimeo/psalm": "^0.3.14",
+                "wp-cli/wp-cli": "^2.10",
+                "wp-phpunit/wp-phpunit": "^6.4",
+                "wpackagist-plugin/woocommerce": "^8.7",
+                "yoast/phpunit-polyfills": "^2.0",
+                "yoast/wordpress-seo": "^22.3"
+            },
+            "time": "2024-06-19T12:58:45+00:00",
+            "type": "wordpress-plugin",
+            "extra": {
+                "installer-paths": {
+                    "packages/{$vendor}/{$name}": [
+                        "vendor:pronamic",
+                        "vendor:wp-pay",
+                        "vendor:wp-pay-extensions",
+                        "vendor:wp-pay-gateways",
+                        "woocommerce/action-scheduler"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Pay\\Extensions\\WooCommerce\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "http://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Remco Tolsma",
+                    "email": "info@remcotolsma.nl",
+                    "homepage": "http://www.remcotolsma.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "WooCommerce driver for the WordPress payment processing library.",
+            "homepage": "http://www.wp-pay.org/extensions/woocommerce/",
+            "keywords": [
+                "extension",
+                "pay",
+                "pronamic",
+                "woocommerce",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "email": "support@wp-pay.org",
+                "issues": "https://github.com/wp-pay-extensions/woocommerce/issues",
+                "source": "https://github.com/wp-pay-extensions/woocommerce"
+            },
+            "install-path": "../../packages/wp-pay-extensions/woocommerce"
+        },
+        {
+            "name": "wp-pay-gateways/adyen",
+            "version": "v4.5.1",
+            "version_normalized": "4.5.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pronamic-pay-adyen.git",
+                "reference": "839b42e58d4d3a676703b0a28b14a583ccce0766"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pronamic-pay-adyen/zipball/839b42e58d4d3a676703b0a28b14a583ccce0766",
+                "reference": "839b42e58d4d3a676703b0a28b14a583ccce0766",
+                "shasum": ""
+            },
+            "require": {
+                "automattic/jetpack-autoloader": "^3.0",
+                "ext-intl": "*",
+                "justinrainbow/json-schema": "^5.2",
+                "php": ">=7.4",
+                "pronamic/wp-http": "^1.2",
+                "pronamic/wp-money": "^2.2",
+                "wp-pay/core": "^4.8"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.4",
+                "overtrue/phplint": "^4.5",
+                "php-coveralls/php-coveralls": "^2.5",
+                "phpmd/phpmd": "^2.13",
+                "pronamic/pronamic-cli": "^1.1",
+                "pronamic/wp-coding-standards": "^2.1",
+                "roots/wordpress": "^6.0",
+                "sirbrillig/phpcs-import-detection": "^1.2",
+                "sirbrillig/phpcs-variable-analysis": "^2.8",
+                "wp-phpunit/wp-phpunit": "^6.1",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "time": "2024-03-26T10:36:11+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Pay\\Gateways\\Adyen\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "http://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Remco Tolsma",
+                    "email": "info@remcotolsma.nl",
+                    "homepage": "http://www.remcotolsma.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Adyen driver for the WordPress payment processing library.",
+            "homepage": "http://www.wp-pay.org/gateways/adyen/",
+            "keywords": [
+                "adyen",
+                "gateway",
+                "pay",
+                "pronamic",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "email": "support@wp-pay.org",
+                "issues": "https://github.com/wp-pay-gateways/adyen/issues",
+                "source": "https://github.com/wp-pay-gateways/adyen"
+            },
+            "install-path": "../../packages/wp-pay-gateways/adyen"
+        },
+        {
+            "name": "wp-pay-gateways/buckaroo",
+            "version": "v4.3.4",
+            "version_normalized": "4.3.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pronamic-pay-buckaroo.git",
+                "reference": "2b44365a742044698805093b4325e909d2946752"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pronamic-pay-buckaroo/zipball/2b44365a742044698805093b4325e909d2946752",
+                "reference": "2b44365a742044698805093b4325e909d2946752",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "pronamic/wp-http": "^1.1",
+                "wp-pay/core": "^4.9"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.4",
+                "overtrue/phplint": "^4.5",
+                "php-coveralls/php-coveralls": "^2.4",
+                "phpmd/phpmd": "^2.7",
+                "pronamic/pronamic-cli": "^1.0",
+                "pronamic/wp-coding-standards": "^1.3",
+                "roots/wordpress": "^6.0",
+                "wp-cli/wp-cli": "^2.3",
+                "wp-phpunit/wp-phpunit": "^6.1",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "time": "2024-03-26T10:38:39+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Pay\\Gateways\\Buckaroo\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "http://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Remco Tolsma",
+                    "email": "info@remcotolsma.nl",
+                    "homepage": "http://www.remcotolsma.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Buckaroo driver for the WordPress payment processing library.",
+            "homepage": "http://www.wp-pay.org/gateways/buckaroo/",
+            "keywords": [
+                "buckaroo",
+                "gateway",
+                "pay",
+                "pronamic",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "email": "support@wp-pay.org",
+                "issues": "https://github.com/wp-pay-gateways/buckaroo/issues",
+                "source": "https://github.com/wp-pay-gateways/buckaroo"
+            },
+            "install-path": "../../packages/wp-pay-gateways/buckaroo"
+        },
+        {
+            "name": "wp-pay-gateways/ems-e-commerce",
+            "version": "v4.4.0",
+            "version_normalized": "4.4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pronamic-pay-ems-e-commerce.git",
+                "reference": "527492870f08ce20b2b7a669a8c2180d15dc528c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pronamic-pay-ems-e-commerce/zipball/527492870f08ce20b2b7a669a8c2180d15dc528c",
+                "reference": "527492870f08ce20b2b7a669a8c2180d15dc528c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "pronamic/wp-money": "^2.0",
+                "wp-pay/core": "^4.6"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.4",
+                "overtrue/phplint": "^4.5",
+                "php-coveralls/php-coveralls": "^2.4",
+                "phpmd/phpmd": "^2.7",
+                "pronamic/pronamic-cli": "^1.1",
+                "pronamic/wp-coding-standards": "^1.3",
+                "roots/wordpress": "^6.0",
+                "wp-phpunit/wp-phpunit": "^6.1",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "time": "2024-05-23T10:24:05+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Pay\\Gateways\\EMS\\ECommerce\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "http://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Remco Tolsma",
+                    "email": "info@remcotolsma.nl",
+                    "homepage": "http://www.remcotolsma.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "EMS e-Commerce Gateway driver for the WordPress payment processing library.",
+            "homepage": "http://www.wp-pay.org/gateways/ems-e-commerce/",
+            "keywords": [
+                "EMS",
+                "gateway",
+                "pay",
+                "pronamic",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "email": "support@wp-pay.org",
+                "issues": "https://github.com/wp-pay-gateways/ems-e-commerce/issues",
+                "source": "https://github.com/wp-pay-gateways/ems-e-commerce"
+            },
+            "install-path": "../../packages/wp-pay-gateways/ems-e-commerce"
+        },
+        {
+            "name": "wp-pay-gateways/icepay",
+            "version": "v4.3.7",
+            "version_normalized": "4.3.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pronamic-pay-icepay.git",
+                "reference": "628e78285e75b9aa893dc812930a73342f4f3844"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pronamic-pay-icepay/zipball/628e78285e75b9aa893dc812930a73342f4f3844",
+                "reference": "628e78285e75b9aa893dc812930a73342f4f3844",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "pronamic/icepay-soap-api": "^2.5",
+                "wp-pay/core": "^4.12"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.8",
+                "overtrue/phplint": "^9.0",
+                "php-coveralls/php-coveralls": "^2.6",
+                "phpmd/phpmd": "^2.14",
+                "pronamic/pronamic-cli": "^1.1",
+                "pronamic/wp-coding-standards": "^2.0",
+                "roots/wordpress": "^6.0",
+                "wp-phpunit/wp-phpunit": "^6.1",
+                "yoast/phpunit-polyfills": "^2.0"
+            },
+            "time": "2024-03-26T10:40:05+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Pay\\Gateways\\Icepay\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "http://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Remco Tolsma",
+                    "email": "info@remcotolsma.nl",
+                    "homepage": "http://www.remcotolsma.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "ICEPAY driver for the WordPress payment processing library.",
+            "homepage": "http://www.wp-pay.org/gateways/icepay/",
+            "keywords": [
+                "gateway",
+                "icepay",
+                "ideal",
+                "pay",
+                "pronamic",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "email": "support@wp-pay.org",
+                "issues": "https://github.com/wp-pay-gateways/icepay/issues",
+                "source": "https://github.com/wp-pay-gateways/icepay"
+            },
+            "install-path": "../../packages/wp-pay-gateways/icepay"
+        },
+        {
+            "name": "wp-pay-gateways/ideal",
+            "version": "v4.1.3",
+            "version_normalized": "4.1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pronamic-pay-ideal.git",
+                "reference": "9ab8fca9d8b471353d9e300ac50a73ced4256658"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pronamic-pay-ideal/zipball/9ab8fca9d8b471353d9e300ac50a73ced4256658",
+                "reference": "9ab8fca9d8b471353d9e300ac50a73ced4256658",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "wp-pay/core": "^4.6"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.4",
+                "overtrue/phplint": "^4.3",
+                "php-coveralls/php-coveralls": "^2.4",
+                "phpmd/phpmd": "^2.8",
+                "pronamic/pronamic-cli": "^1.0",
+                "pronamic/wp-coding-standards": "^1.3",
+                "roots/wordpress": "^6.0",
+                "wp-phpunit/wp-phpunit": "^6.1",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "time": "2023-06-01T09:43:45+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Pay\\Gateways\\IDeal\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "description": "iDEAL driver for the WordPress payment processing library.",
+            "homepage": "https://github.com/wp-pay-gateways/ideal",
+            "keywords": [
+                "gateway",
+                "ideal",
+                "pay",
+                "pronamic",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "issues": "https://github.com/pronamic/wp-pronamic-pay-ideal/issues",
+                "source": "https://github.com/pronamic/wp-pronamic-pay-ideal/tree/v4.1.3"
+            },
+            "install-path": "../../packages/wp-pay-gateways/ideal"
+        },
+        {
+            "name": "wp-pay-gateways/ideal-advanced-v3",
+            "version": "v4.3.7",
+            "version_normalized": "4.3.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pronamic-pay-ideal-advanced-v3.git",
+                "reference": "f0adb78ea6ff1bed72849f507b1883cd2118cd45"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pronamic-pay-ideal-advanced-v3/zipball/f0adb78ea6ff1bed72849f507b1883cd2118cd45",
+                "reference": "f0adb78ea6ff1bed72849f507b1883cd2118cd45",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-openssl": "*",
+                "php": ">=7.4",
+                "pronamic/wp-http": "^1.1",
+                "wp-pay-gateways/ideal": "^4.1",
+                "wp-pay/core": "^4.6"
+            },
+            "require-dev": {
+                "automattic/wordbless": "^0.4.2",
+                "bamarni/composer-bin-plugin": "^1.8",
+                "overtrue/phplint": "^9.0",
+                "php-coveralls/php-coveralls": "^2.6",
+                "phpmd/phpmd": "^2.14",
+                "pronamic/pronamic-cli": "^1.1",
+                "pronamic/wp-coding-standards": "^2.0",
+                "roots/wordpress": "^6.0",
+                "wp-phpunit/wp-phpunit": "^6.1",
+                "yoast/phpunit-polyfills": "^1.1"
+            },
+            "time": "2023-10-13T12:12:47+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Pay\\Gateways\\IDealAdvancedV3\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "http://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Remco Tolsma",
+                    "email": "info@remcotolsma.nl",
+                    "homepage": "http://www.remcotolsma.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "iDEAL Advanced v3 driver for the WordPress payment processing library.",
+            "homepage": "https://github.com/wp-pay-gateways/ideal-advanced-v3",
+            "keywords": [
+                "advanced",
+                "gateway",
+                "ideal",
+                "pay",
+                "pronamic",
+                "v3",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "email": "support@wp-pay.org",
+                "issues": "https://github.com/wp-pay-gateways/ideal-advanced-v3/issues",
+                "source": "https://github.com/wp-pay-gateways/ideal-advanced-v3"
+            },
+            "install-path": "../../packages/wp-pay-gateways/ideal-advanced-v3"
+        },
+        {
+            "name": "wp-pay-gateways/ideal-basic",
+            "version": "v4.3.6",
+            "version_normalized": "4.3.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pronamic-pay-ideal-basic.git",
+                "reference": "d93936e1c11eb50b4363aaf9068ad7d3faad8fef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pronamic-pay-ideal-basic/zipball/d93936e1c11eb50b4363aaf9068ad7d3faad8fef",
+                "reference": "d93936e1c11eb50b4363aaf9068ad7d3faad8fef",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "wp-pay-gateways/ideal": "^4.1",
+                "wp-pay/core": "^4.6"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.4",
+                "overtrue/phplint": "^4.3",
+                "php-coveralls/php-coveralls": "^2.5",
+                "phpmd/phpmd": "^2.7",
+                "pronamic/pronamic-cli": "^1.0",
+                "pronamic/wp-coding-standards": "^1.3",
+                "roots/wordpress": "^6.0",
+                "wp-phpunit/wp-phpunit": "^6.1",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "time": "2024-03-26T10:41:21+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Pay\\Gateways\\IDealBasic\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "http://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Remco Tolsma",
+                    "email": "info@remcotolsma.nl",
+                    "homepage": "http://www.remcotolsma.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "iDEAL Basic driver for the WordPress payment processing library.",
+            "homepage": "http://www.wp-pay.org/gateways/ideal-basic/",
+            "keywords": [
+                "basic",
+                "gateway",
+                "ideal",
+                "pay",
+                "pronamic",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "email": "support@wp-pay.org",
+                "issues": "https://github.com/wp-pay-gateways/ideal-basic/issues",
+                "source": "https://github.com/wp-pay-gateways/ideal-basic"
+            },
+            "install-path": "../../packages/wp-pay-gateways/ideal-basic"
+        },
+        {
+            "name": "wp-pay-gateways/mollie",
+            "version": "v4.12.0",
+            "version_normalized": "4.12.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pronamic-pay-mollie.git",
+                "reference": "8c5e8d449da4dcd0ffe08c72c62131f8f660c80f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pronamic-pay-mollie/zipball/8c5e8d449da4dcd0ffe08c72c62131f8f660c80f",
+                "reference": "8c5e8d449da4dcd0ffe08c72c62131f8f660c80f",
+                "shasum": ""
+            },
+            "require": {
+                "automattic/jetpack-autoloader": "^3.0",
+                "ext-json": "*",
+                "justinrainbow/json-schema": "^5.2",
+                "php": ">=8.0",
+                "pronamic/wp-http": "^1.2",
+                "pronamic/wp-mollie": "^1.6",
+                "woocommerce/action-scheduler": "^3.8",
+                "wp-pay/core": "^4.18"
+            },
+            "require-dev": {
+                "overtrue/phplint": "^9.0",
+                "php-coveralls/php-coveralls": "^2.5",
+                "phpmd/phpmd": "^2.7",
+                "phpmetrics/phpmetrics": "^2.8",
+                "phpstan/extension-installer": "^1.3",
+                "phpstan/phpstan": "^1.11",
+                "pronamic/pronamic-cli": "^1.1",
+                "pronamic/wp-coding-standards": "^2.1",
+                "pronamic/wp-documentor": "^1.4",
+                "roots/wordpress": "^6.5",
+                "szepeviktor/phpstan-wordpress": "^1.3",
+                "vimeo/psalm": "^5.24",
+                "wordpress/sqlite-database-integration": "^2.1",
+                "wp-cli/wp-cli": "^2.3",
+                "wp-phpunit/wp-phpunit": "^6.5",
+                "yoast/phpunit-polyfills": "^2.0"
+            },
+            "time": "2024-06-07T12:08:11+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Pay\\Gateways\\Mollie\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "http://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Remco Tolsma",
+                    "email": "info@remcotolsma.nl",
+                    "homepage": "http://www.remcotolsma.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Mollie driver for the WordPress payment processing library.",
+            "homepage": "http://www.wp-pay.org/gateways/mollie/",
+            "keywords": [
+                "gateway",
+                "mollie",
+                "pay",
+                "pronamic",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "email": "support@wp-pay.org",
+                "issues": "https://github.com/wp-pay-gateways/mollie/issues",
+                "source": "https://github.com/wp-pay-gateways/mollie"
+            },
+            "install-path": "../../packages/wp-pay-gateways/mollie"
+        },
+        {
+            "name": "wp-pay-gateways/multisafepay",
+            "version": "v4.5.0",
+            "version_normalized": "4.5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pronamic-pay-multisafepay.git",
+                "reference": "67ddf0ebd5f4b71bd6e874237320682d3990fe41"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pronamic-pay-multisafepay/zipball/67ddf0ebd5f4b71bd6e874237320682d3990fe41",
+                "reference": "67ddf0ebd5f4b71bd6e874237320682d3990fe41",
+                "shasum": ""
+            },
+            "require": {
+                "automattic/jetpack-autoloader": "^3.0",
+                "ext-simplexml": "*",
+                "php": ">=7.4",
+                "pronamic/wp-http": "^1.2",
+                "woocommerce/action-scheduler": "^3.7",
+                "wp-pay/core": "^4.16"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.8",
+                "overtrue/phplint": "^9.1",
+                "php-coveralls/php-coveralls": "^2.7",
+                "phpmd/phpmd": "^2.15",
+                "phpstan/phpstan": "^1.11",
+                "pronamic/pronamic-cli": "^1.1",
+                "pronamic/wp-coding-standards": "^2.2",
+                "roots/wordpress": "^6.4",
+                "szepeviktor/phpstan-wordpress": "^1.3",
+                "vimeo/psalm": "^5.25",
+                "wp-phpunit/wp-phpunit": "^6.4",
+                "yoast/phpunit-polyfills": "^2.0"
+            },
+            "time": "2024-09-09T14:31:14+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Pay\\Gateways\\MultiSafepay\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "http://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Remco Tolsma",
+                    "email": "info@remcotolsma.nl",
+                    "homepage": "http://www.remcotolsma.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "MultiSafepay driver for the WordPress payment processing library.",
+            "homepage": "http://www.wp-pay.org/gateways/multisafepay/",
+            "keywords": [
+                "gateway",
+                "ideal",
+                "multisafepay",
+                "pay",
+                "pronamic",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "email": "support@wp-pay.org",
+                "issues": "https://github.com/wp-pay-gateways/multisafepay/issues",
+                "source": "https://github.com/wp-pay-gateways/multisafepay"
+            },
+            "install-path": "../../packages/wp-pay-gateways/multisafepay"
+        },
+        {
+            "name": "wp-pay-gateways/ogone",
+            "version": "v4.7.0",
+            "version_normalized": "4.7.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pronamic-pay-ingenico.git",
+                "reference": "9e20a851a56c6e00e4b47cd7a6255c2f9c5429d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pronamic-pay-ingenico/zipball/9e20a851a56c6e00e4b47cd7a6255c2f9c5429d9",
+                "reference": "9e20a851a56c6e00e4b47cd7a6255c2f9c5429d9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-simplexml": "*",
+                "php": ">=8.1",
+                "pronamic/ideal-issuers": "^1.0",
+                "pronamic/wp-http": "^1.2",
+                "wp-pay/core": "^4.13"
+            },
+            "require-dev": {
+                "automattic/wordbless": "^0.4.0",
+                "bamarni/composer-bin-plugin": "^1.8",
+                "overtrue/phplint": "^9.0",
+                "php-coveralls/php-coveralls": "^2.6",
+                "phpmd/phpmd": "^2.14",
+                "pronamic/pronamic-cli": "^1.1",
+                "pronamic/wp-coding-standards": "^2.0",
+                "roots/wordpress": "^6.0",
+                "wp-phpunit/wp-phpunit": "^6.1",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "time": "2024-06-03T14:54:08+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Pay\\Gateways\\Ingenico\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "http://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Remco Tolsma",
+                    "email": "info@remcotolsma.nl",
+                    "homepage": "http://www.remcotolsma.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Ingenico/Ogone driver for the WordPress payment processing library.",
+            "homepage": "http://www.wp-pay.org/gateways/ogone/",
+            "keywords": [
+                "gateway",
+                "ingenico",
+                "ogone",
+                "pay",
+                "pronamic",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "email": "support@wp-pay.org",
+                "issues": "https://github.com/wp-pay-gateways/ogone/issues",
+                "source": "https://github.com/wp-pay-gateways/ogone"
+            },
+            "install-path": "../../packages/wp-pay-gateways/ogone"
+        },
+        {
+            "name": "wp-pay-gateways/omnikassa-2",
+            "version": "v4.7.2",
+            "version_normalized": "4.7.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pronamic-pay-rabo-smart-pay.git",
+                "reference": "bff9d6a5c6b037343a1eead5ac8daa6961465855"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pronamic-pay-rabo-smart-pay/zipball/bff9d6a5c6b037343a1eead5ac8daa6961465855",
+                "reference": "bff9d6a5c6b037343a1eead5ac8daa6961465855",
+                "shasum": ""
+            },
+            "require": {
+                "automattic/jetpack-autoloader": "^3.0",
+                "justinrainbow/json-schema": "^5.2",
+                "php": ">=8.1",
+                "pronamic/wp-http": "^1.2",
+                "wp-pay/core": "^4.17"
+            },
+            "require-dev": {
+                "humanmade/psalm-plugin-wordpress": "^3.1",
+                "overtrue/phplint": "^9.1",
+                "php-coveralls/php-coveralls": "^2.7",
+                "phpmd/phpmd": "^2.15",
+                "phpstan/extension-installer": "^1.3",
+                "phpstan/phpstan": "^1.11",
+                "pronamic/pronamic-cli": "^1.1",
+                "pronamic/wp-coding-standards": "^2.2",
+                "pronamic/wp-documentor": "^1.4",
+                "roots/wordpress": "^6.4",
+                "sirbrillig/phpcs-variable-analysis": "^2.11",
+                "slevomat/coding-standard": "^8.15",
+                "szepeviktor/phpstan-wordpress": "^1.3",
+                "vimeo/psalm": "^5.24",
+                "wordpress/sqlite-database-integration": "^2.1",
+                "wp-phpunit/wp-phpunit": "^6.5",
+                "yoast/phpunit-polyfills": "^2.0"
+            },
+            "time": "2024-06-19T12:53:09+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Pay\\Gateways\\OmniKassa2\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "http://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Remco Tolsma",
+                    "email": "info@remcotolsma.nl",
+                    "homepage": "http://www.remcotolsma.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Rabo Smart Pay driver for the WordPress payment processing library.",
+            "homepage": "http://www.wp-pay.org/gateways/omnikassa-2/",
+            "keywords": [
+                "gateway",
+                "omnikassa",
+                "pay",
+                "pronamic",
+                "smart",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "email": "support@wp-pay.org",
+                "issues": "https://github.com/wp-pay-gateways/omnikassa-2/issues",
+                "source": "https://github.com/wp-pay-gateways/omnikassa-2"
+            },
+            "install-path": "../../packages/wp-pay-gateways/omnikassa-2"
+        },
+        {
+            "name": "wp-pay-gateways/pay-nl",
+            "version": "v4.5.6",
+            "version_normalized": "4.5.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pronamic-pay-pay-nl.git",
+                "reference": "11f430376d2e039c82dfb3af8b8f3ee82044c59b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pronamic-pay-pay-nl/zipball/11f430376d2e039c82dfb3af8b8f3ee82044c59b",
+                "reference": "11f430376d2e039c82dfb3af8b8f3ee82044c59b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "wp-pay/core": "^4.6"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.4",
+                "overtrue/phplint": "^4.4",
+                "php-coveralls/php-coveralls": "^2.5",
+                "phpmd/phpmd": "^2.7",
+                "pronamic/pronamic-cli": "^1.1",
+                "pronamic/wp-coding-standards": "^1.3",
+                "roots/wordpress": "^6.0",
+                "wp-phpunit/wp-phpunit": "^6.1",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "time": "2023-10-13T12:21:20+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Pay\\Gateways\\PayNL\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "http://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Remco Tolsma",
+                    "email": "info@remcotolsma.nl",
+                    "homepage": "http://www.remcotolsma.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Pay.nl driver for the WordPress payment processing library.",
+            "homepage": "http://www.wp-pay.org/gateways/pay-nl/",
+            "keywords": [
+                "gateway",
+                "ideal",
+                "pay",
+                "pay-nl",
+                "pronamic",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "email": "support@wp-pay.org",
+                "issues": "https://github.com/wp-pay-gateways/pay-nl/issues",
+                "source": "https://github.com/wp-pay-gateways/pay-nl"
+            },
+            "install-path": "../../packages/wp-pay-gateways/pay-nl"
+        },
+        {
+            "name": "wp-pay-gateways/paypal",
+            "version": "v2.3.6",
+            "version_normalized": "2.3.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pronamic-pay-paypal.git",
+                "reference": "cb62117e8c2efe506885c3d40b1df0ad670da558"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pronamic-pay-paypal/zipball/cb62117e8c2efe506885c3d40b1df0ad670da558",
+                "reference": "cb62117e8c2efe506885c3d40b1df0ad670da558",
+                "shasum": ""
+            },
+            "require": {
+                "ext-intl": "*",
+                "ext-json": "*",
+                "justinrainbow/json-schema": "^5.2",
+                "php": ">=7.4",
+                "pronamic/wp-http": "^1.2",
+                "pronamic/wp-money": "^2.2",
+                "wp-pay/core": "^4.6"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.4",
+                "overtrue/phplint": "^4.4",
+                "php-coveralls/php-coveralls": "^2.5",
+                "phpmd/phpmd": "^2.8",
+                "pronamic/pronamic-cli": "^1.1",
+                "pronamic/wp-coding-standards": "^1.3",
+                "roots/wordpress": "^6.0",
+                "sirbrillig/phpcs-import-detection": "^1.2",
+                "slevomat/coding-standard": "^6.4",
+                "wp-cli/wp-cli-bundle": "^2.6",
+                "wp-phpunit/wp-phpunit": "^6.1",
+                "yoast/phpunit-polyfills": "^1.0"
+            },
+            "time": "2023-10-13T12:24:39+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Pay\\Gateways\\PayPal\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "http://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Remco Tolsma",
+                    "email": "info@remcotolsma.nl",
+                    "homepage": "http://www.remcotolsma.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PayPal driver for the WordPress payment processing library.",
+            "homepage": "http://www.wp-pay.org/gateways/paypal/",
+            "keywords": [
+                "gateway",
+                "pay",
+                "paypal",
+                "pronamic",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "email": "support@wp-pay.org",
+                "issues": "https://github.com/wp-pay-gateways/paypal/issues",
+                "source": "https://github.com/wp-pay-gateways/paypal"
+            },
+            "install-path": "../../packages/wp-pay-gateways/paypal"
+        },
+        {
+            "name": "wp-pay/core",
+            "version": "v4.22.1",
+            "version_normalized": "4.22.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pay-core.git",
+                "reference": "1fb63b5b94314d45ec2946d724b38c8507e9eaae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pay-core/zipball/1fb63b5b94314d45ec2946d724b38c8507e9eaae",
+                "reference": "1fb63b5b94314d45ec2946d724b38c8507e9eaae",
+                "shasum": ""
+            },
+            "require": {
+                "automattic/jetpack-autoloader": "^3.0",
+                "ext-dom": "*",
+                "ext-libxml": "*",
+                "ext-simplexml": "*",
+                "php": ">=7.4",
+                "pronamic/wp-datetime": "^2.1",
+                "pronamic/wp-html": "^2.2",
+                "pronamic/wp-http": "^1.2",
+                "pronamic/wp-money": "^2.3",
+                "pronamic/wp-number": "^1.3",
+                "pronamic/wp-pay-logos": "^2.2",
+                "viison/address-splitter": "^0.3.4",
+                "woocommerce/action-scheduler": "^3.8"
+            },
+            "require-dev": {
+                "overtrue/phplint": "^9.3",
+                "php-coveralls/php-coveralls": "^2.4",
+                "php-stubs/wordpress-globals": "^0.2.0",
+                "php-stubs/wp-cli-stubs": "^2.4",
+                "phpmd/phpmd": "^2.9",
+                "phpstan/extension-installer": "^1.3",
+                "phpstan/phpstan": "^1.11",
+                "pronamic/pronamic-cli": "^1.1",
+                "pronamic/wp-coding-standards": "^2.0",
+                "pronamic/wp-documentor": "^1.4",
+                "roots/wordpress": "^6.0",
+                "szepeviktor/phpstan-wordpress": "^1.3",
+                "vimeo/psalm": "^5.24",
+                "wordpress/sqlite-database-integration": "^2.1",
+                "wp-cli/wp-cli": "^2.3",
+                "wp-phpunit/wp-phpunit": "^6.1",
+                "yoast/phpunit-polyfills": "^2.0"
+            },
+            "time": "2024-09-27T13:32:20+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "includes/functions.php"
+                ],
+                "psr-4": {
+                    "Pronamic\\WordPress\\Pay\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "https://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Remco Tolsma",
+                    "email": "info@remcotolsma.nl",
+                    "homepage": "https://www.remcotolsma.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Core components for the WordPress payment processing library.",
+            "homepage": "https://www.wp-pay.org/",
+            "keywords": [
+                "core",
+                "gateway",
+                "pay",
+                "pronamic",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "email": "support@wp-pay.org",
+                "issues": "https://github.com/wp-pay/core/issues",
+                "source": "https://github.com/wp-pay/core"
+            },
+            "install-path": "../../packages/wp-pay/core"
+        },
+        {
+            "name": "wp-pay/fundraising",
+            "version": "v3.2.5",
+            "version_normalized": "3.2.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pronamic/wp-pronamic-pay-fundraising.git",
+                "reference": "f393c42b9d5f57fd5bf5d29483506d1f094d2ba1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pronamic/wp-pronamic-pay-fundraising/zipball/f393c42b9d5f57fd5bf5d29483506d1f094d2ba1",
+                "reference": "f393c42b9d5f57fd5bf5d29483506d1f094d2ba1",
+                "shasum": ""
+            },
+            "require": {
+                "automattic/jetpack-autoloader": "^3.0",
+                "php": ">=8.0",
+                "pronamic/wp-money": "^2.4",
+                "wp-pay/core": "^4.16"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.8",
+                "overtrue/phplint": "^9.1",
+                "php-coveralls/php-coveralls": "^2.7",
+                "phpmd/phpmd": "^2.15",
+                "pronamic/pronamic-cli": "^1.1",
+                "pronamic/wp-coding-standards": "^2.2",
+                "roots/wordpress": "^6.4",
+                "sirbrillig/phpcs-import-detection": "^1.3",
+                "sirbrillig/phpcs-variable-analysis": "^2.11",
+                "wp-cli/wp-cli-bundle": "^2.10",
+                "wp-phpunit/wp-phpunit": "^6.4",
+                "yoast/phpunit-polyfills": "^2.0"
+            },
+            "time": "2024-03-26T12:29:12+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Pronamic\\WordPress\\Pay\\Fundraising\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Pronamic",
+                    "email": "info@pronamic.eu",
+                    "homepage": "http://www.pronamic.eu/",
+                    "role": "Company"
+                },
+                {
+                    "name": "Remco Tolsma",
+                    "email": "info@remcotolsma.nl",
+                    "homepage": "http://www.remcotolsma.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Fundraising add-on for the WordPress payment processing library.",
+            "homepage": "http://www.wp-pay.org/addons/fundraising/",
+            "keywords": [
+                "addon",
+                "crowdfunding",
+                "donations",
+                "fundraising",
+                "pay",
+                "progress",
+                "pronamic",
+                "target",
+                "wordpress",
+                "wp"
+            ],
+            "support": {
+                "email": "support@wp-pay.org",
+                "issues": "https://github.com/wp-pay/fundraising/issues",
+                "source": "https://github.com/wp-pay/fundraising"
+            },
+            "install-path": "../../packages/wp-pay/fundraising"
+        }
+    ],
+    "dev": false,
+    "dev-package-names": []
+}

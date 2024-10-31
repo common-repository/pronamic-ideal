@@ -1,0 +1,44 @@
+{
+  "name": "pay-nl",
+  "version": "4.5.6",
+  "description": "Pay.nl driver for the WordPress payment processing library.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wp-pay-gateways/pay-nl"
+  },
+  "keywords": [
+    "wordpress",
+    "wp",
+    "pay",
+    "pay-nl",
+    "ideal",
+    "gateway",
+    "pronamic"
+  ],
+  "author": {
+    "name": "Pronamic",
+    "email": "info@pronamic.nl",
+    "url": "http://www.pronamic.nl/"
+  },
+  "contributors": [
+    {
+      "name": "Remco Tolsma",
+      "email": "info@remcotolsma.nl",
+      "url": "http://www.remcotolsma.nl/"
+    }
+  ],
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/wp-pay-gateways/pay-nl/issues"
+  },
+  "homepage": "http://www.wp-pay.org/gateways/pay-nl/",
+  "devDependencies": {
+    "grunt": "^1.0.4",
+    "grunt-contrib-jshint": "^2.1.0",
+    "grunt-phpcs": "^0.4.0",
+    "grunt-phplint": "0.1.0",
+    "grunt-phpmd": "^0.1.1",
+    "grunt-phpunit": "^0.3.6",
+    "load-grunt-tasks": "^5.1.0"
+  }
+}

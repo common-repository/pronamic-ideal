@@ -1,0 +1,75 @@
+{
+	"name": "wp-pay-extensions/easy-digital-downloads",
+	"description": "Easy Digital Downloads driver for the WordPress payment processing library.",
+	"keywords": ["wordpress", "wp", "pay", "edd", "easy", "digital", "downlaods", "extension", "pronamic"],
+	"homepage": "http://www.wp-pay.org/extensions/easy-digital-downloads/",
+	"license": "GPL-3.0-or-later",
+	"type": "wordpress-plugin",
+	"authors": [
+		{
+			"name": "Pronamic",
+			"email": "info@pronamic.eu",
+			"homepage": "http://www.pronamic.eu/",
+			"role": "Company"
+		},
+		{
+			"name": "Remco Tolsma",
+			"email": "info@remcotolsma.nl",
+			"homepage": "http://www.remcotolsma.nl/",
+			"role": "Developer"
+		}
+	],
+	"support": {
+		"email": "support@wp-pay.org",
+		"issues": "https://github.com/wp-pay-extensions/easy-digital-downloads/issues",
+		"source": "https://github.com/wp-pay-extensions/easy-digital-downloads"
+	},
+	"autoload": {
+		"psr-4": {
+			"Pronamic\\WordPress\\Pay\\Extensions\\EasyDigitalDownloads\\": "src"
+		}
+	},
+	"config": {
+		"sort-packages": true,
+		"allow-plugins": {
+			"bamarni/composer-bin-plugin": true,
+			"roots/wordpress-core-installer": true,
+			"composer/installers": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	},
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://wpackagist.org"
+		}
+	],
+	"require": {
+		"php": ">=8.0",
+		"wp-pay/core": "^4.16"
+	},
+	"require-dev": {
+		"bamarni/composer-bin-plugin": "^1.8",
+		"php-coveralls/php-coveralls": "^2.7",
+		"phpmd/phpmd": "^2.15",
+		"pronamic/pronamic-cli": "^1.1",
+		"pronamic/wp-coding-standards": "^2.2",
+		"roots/wordpress": "^6.4",
+		"wp-phpunit/wp-phpunit": "^6.4",
+		"wpackagist-plugin/easy-digital-downloads": "^3.2",
+		"wpackagist-plugin/wordpress-seo": "^22.3",
+		"yoast/phpunit-polyfills": "^2.0"
+	},
+	"scripts": {
+		"coveralls": "vendor/bin/php-coveralls -v",
+		"phpcbf": "XDEBUG_MODE=off vendor/bin/phpcbf",
+		"phpcs": "XDEBUG_MODE=off vendor/bin/phpcs -s -v",
+		"phplint": "find src tests -name '*.php' | xargs -n 1 -P 4 php -l",
+		"phpmd": "vendor/bin/phpmd src,tests text phpmd.ruleset.xml --suffixes php",
+		"phpstan": "vendor/bin/phpstan analyse --memory-limit=-1",
+		"phpunit": "vendor/bin/phpunit",
+		"post-install-cmd": "echo 'Optionally run: composer bin all install'",
+		"post-update-cmd": "echo 'Optionally run: composer bin all update'",
+		"psalm": "vendor/bin/psalm"
+	}
+}

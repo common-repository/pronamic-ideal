@@ -1,0 +1,88 @@
+{
+	"name": "wp-pay-gateways/paypal",
+	"description": "PayPal driver for the WordPress payment processing library.",
+	"keywords": ["wordpress", "wp", "pay", "paypal", "gateway", "pronamic"],
+	"homepage": "http://www.wp-pay.org/gateways/paypal/",
+	"license": "GPL-3.0-or-later",
+	"type": "wordpress-plugin",
+	"authors": [
+		{
+			"name": "Pronamic",
+			"email": "info@pronamic.eu",
+			"homepage": "http://www.pronamic.eu/",
+			"role": "Company"
+		},
+		{
+			"name": "Remco Tolsma",
+			"email": "info@remcotolsma.nl",
+			"homepage": "http://www.remcotolsma.nl/",
+			"role": "Developer"
+		}
+	],
+	"support": {
+		"email": "support@wp-pay.org",
+		"issues": "https://github.com/wp-pay-gateways/paypal/issues",
+		"source": "https://github.com/wp-pay-gateways/paypal"
+	},
+	"autoload": {
+		"psr-4": {
+			"Pronamic\\WordPress\\Pay\\Gateways\\PayPal\\": "src/"
+		}
+	},
+	"config": {
+		"sort-packages": true,
+		"allow-plugins": {
+			"bamarni/composer-bin-plugin": true,
+			"roots/wordpress-core-installer": true,
+			"composer/installers": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		},
+		"wp-slug": "pronamic-pay-paypal"
+	},
+	"require": {
+		"php": ">=7.4",
+		"ext-intl": "*",
+		"ext-json": "*",
+		"justinrainbow/json-schema": "^5.2",
+		"pronamic/wp-http": "^1.2",
+		"pronamic/wp-money": "^2.2",
+		"wp-pay/core": "^4.6"
+	},
+	"require-dev": {
+		"bamarni/composer-bin-plugin": "^1.4",
+		"overtrue/phplint": "^4.4",
+		"php-coveralls/php-coveralls": "^2.5",
+		"phpmd/phpmd": "^2.8",
+		"pronamic/pronamic-cli": "^1.1",
+		"pronamic/wp-coding-standards": "^1.3",
+		"roots/wordpress": "^6.0",
+		"sirbrillig/phpcs-import-detection": "^1.2",
+		"slevomat/coding-standard": "^6.4",
+		"wp-cli/wp-cli-bundle": "^2.6",
+		"wp-phpunit/wp-phpunit": "^6.1",
+		"yoast/phpunit-polyfills": "^1.0"
+	},
+	"scripts": {
+		"ci": [
+			"@phplint",
+			"@phpcs",
+			"@coverage",
+			"@phpstan",
+			"@psalm"
+		],
+		"coveralls": "vendor/bin/php-coveralls -v",
+		"phpcbf": "XDEBUG_MODE=off vendor/bin/phpcbf",
+		"phpcs": "XDEBUG_MODE=off vendor/bin/phpcs -s -v",
+		"phplint": "vendor/bin/phplint",
+		"phpmd": "vendor/bin/phpmd src,tests text phpmd.ruleset.xml --suffixes php",
+		"phpstan": "vendor/bin/phpstan analyse --memory-limit=-1",
+		"phpunit": "vendor/bin/phpunit",
+		"post-install-cmd": "echo 'Optionally run: composer bin all install'",
+		"post-update-cmd": "echo 'Optionally run: composer bin all update'",
+		"psalm": "vendor/bin/psalm",
+		"xmllint-phpcs": "xmllint --noout --schema vendor/squizlabs/php_codesniffer/phpcs.xsd phpcs.xml.dist",
+		"xmllint": [
+			"@xmllint-phpcs"
+		]
+	}
+}

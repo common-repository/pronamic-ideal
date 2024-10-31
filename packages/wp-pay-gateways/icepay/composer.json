@@ -1,0 +1,68 @@
+{
+	"name": "wp-pay-gateways/icepay",
+	"description": "ICEPAY driver for the WordPress payment processing library.",
+	"keywords": ["wordpress", "wp", "pay", "icepay", "ideal", "gateway", "pronamic"],
+	"homepage": "http://www.wp-pay.org/gateways/icepay/",
+	"license": "GPL-3.0-or-later",
+	"type": "wordpress-plugin",
+	"authors": [
+		{
+			"name": "Pronamic",
+			"email": "info@pronamic.eu",
+			"homepage": "http://www.pronamic.eu/",
+			"role": "Company"
+		},
+		{
+			"name": "Remco Tolsma",
+			"email": "info@remcotolsma.nl",
+			"homepage": "http://www.remcotolsma.nl/",
+			"role": "Developer"
+		}
+	],
+	"support": {
+		"email": "support@wp-pay.org",
+		"issues": "https://github.com/wp-pay-gateways/icepay/issues",
+		"source": "https://github.com/wp-pay-gateways/icepay"
+	},
+	"autoload": {
+		"psr-4": {
+			"Pronamic\\WordPress\\Pay\\Gateways\\Icepay\\": "src/"
+		}
+	},
+	"require": {
+		"php": ">=7.4",
+		"pronamic/icepay-soap-api": "^2.5",
+		"wp-pay/core": "^4.12"
+	},
+	"require-dev": {
+		"bamarni/composer-bin-plugin": "^1.8",
+		"overtrue/phplint": "^9.0",
+		"php-coveralls/php-coveralls": "^2.6",
+		"phpmd/phpmd": "^2.14",
+		"roots/wordpress": "^6.0",
+		"wp-phpunit/wp-phpunit": "^6.1",
+		"pronamic/wp-coding-standards": "^2.0",
+		"yoast/phpunit-polyfills": "^2.0",
+		"pronamic/pronamic-cli": "^1.1"
+	},
+	"scripts": {
+		"coveralls": "vendor/bin/php-coveralls -v",
+		"phpcbf": "XDEBUG_MODE=off vendor/bin/phpcbf",
+		"phpcs": "XDEBUG_MODE=off vendor/bin/phpcs -s -v",
+		"phplint": "vendor/bin/phplint",
+		"phpmd": "vendor/bin/phpmd src,tests text phpmd.ruleset.xml --suffixes php",
+		"phpstan": "vendor/bin/phpstan analyse --memory-limit=-1",
+		"phpunit": "vendor/bin/phpunit",
+		"post-install-cmd": "echo 'Optionally run: composer bin all install'",
+		"post-update-cmd": "echo 'Optionally run: composer bin all update'",
+		"psalm": "vendor/bin/psalm"
+	},
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true,
+			"roots/wordpress-core-installer": true,
+			"bamarni/composer-bin-plugin": true
+		}
+	}
+}

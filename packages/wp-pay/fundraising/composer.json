@@ -1,0 +1,97 @@
+{
+	"name": "wp-pay/fundraising",
+	"description": "Fundraising add-on for the WordPress payment processing library.",
+	"keywords": ["wordpress", "wp", "pay", "fundraising", "crowdfunding", "donations", "progress", "target", "addon", "pronamic"],
+	"homepage": "http://www.wp-pay.org/addons/fundraising/",
+	"license": "GPL-3.0-or-later",
+	"type": "wordpress-plugin",
+	"authors": [
+		{
+			"name": "Pronamic",
+			"email": "info@pronamic.eu",
+			"homepage": "http://www.pronamic.eu/",
+			"role": "Company"
+		},
+		{
+			"name": "Remco Tolsma",
+			"email": "info@remcotolsma.nl",
+			"homepage": "http://www.remcotolsma.nl/",
+			"role": "Developer"
+		}
+	],
+	"support": {
+		"email": "support@wp-pay.org",
+		"issues": "https://github.com/wp-pay/fundraising/issues",
+		"source": "https://github.com/wp-pay/fundraising"
+	},
+	"autoload": {
+		"psr-4": {
+			"Pronamic\\WordPress\\Pay\\Fundraising\\": "src/"
+		}
+	},
+	"config": {
+		"sort-packages": true,
+		"allow-plugins": {
+			"automattic/jetpack-autoloader": true,
+			"bamarni/composer-bin-plugin": true,
+			"composer/installers": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true,
+			"roots/wordpress-core-installer": true
+		},
+		"wp-slug": "pronamic-pay-fundraising"
+	},
+	"require": {
+		"php": ">=8.0",
+		"automattic/jetpack-autoloader": "^3.0",
+		"pronamic/wp-money": "^2.4",
+		"wp-pay/core": "^4.16"
+	},
+	"require-dev": {
+		"bamarni/composer-bin-plugin": "^1.8",
+		"overtrue/phplint": "^9.1",
+		"php-coveralls/php-coveralls": "^2.7",
+		"phpmd/phpmd": "^2.15",
+		"pronamic/pronamic-cli": "^1.1",
+		"pronamic/wp-coding-standards": "^2.2",
+		"roots/wordpress": "^6.4",
+		"sirbrillig/phpcs-import-detection": "^1.3",
+		"sirbrillig/phpcs-variable-analysis": "^2.11",
+		"wp-cli/wp-cli-bundle": "^2.10",
+		"wp-phpunit/wp-phpunit": "^6.4",
+		"yoast/phpunit-polyfills": "^2.0"
+	},
+	"scripts": {
+		"ci": [
+			"@phplint",
+			"@phpcs"
+		],
+		"coveralls": "vendor/bin/php-coveralls -v",
+		"make-i18n-json": "wp i18n make-json languages/*.po --no-purge",
+		"make-pot": "wp i18n make-pot . languages/pronamic-pay-fundraising.pot --slug='pronamic-pay-fundraising' --exclude='js/src,tests,wordpress'",
+		"update-po": "find languages/*.po -type f -exec msgmerge --update --backup=off {} languages/pronamic-pay-fundraising.pot \\;",
+		"phpcbf": "XDEBUG_MODE=off vendor/bin/phpcbf",
+		"phpcs": "XDEBUG_MODE=off vendor/bin/phpcs -s -v",
+		"phplint": "vendor/bin/phplint",
+		"phpmd": "vendor/bin/phpmd src,tests text phpmd.ruleset.xml --suffixes php",
+		"phpunit": "vendor/bin/phpunit --colors=always",
+		"phpstan": "vendor/bin/phpstan analyse --memory-limit=-1",
+		"post-install-cmd": "echo 'Optionally run: composer bin all install'",
+		"post-update-cmd": "echo 'Optionally run: composer bin all update'",
+		"psalm": "vendor/bin/psalm",
+		"xmllint-phpcs": "xmllint --noout --schema vendor/squizlabs/php_codesniffer/phpcs.xsd phpcs.xml.dist",
+		"xmllint": [
+			"@xmllint-phpcs"
+		],
+		"build": "vendor/bin/pronamic wp-build",
+		"translate": [
+			"@build",
+			"rsync --recursive --delete --verbose ./build/project/languages/ ./languages/"
+		],
+		"version": "@build",
+		"release": [
+			"@build",
+			"vendor/bin/pronamic release-to-github",
+			"vendor/bin/pronamic release-to-pronamic"
+		]
+	}
+}

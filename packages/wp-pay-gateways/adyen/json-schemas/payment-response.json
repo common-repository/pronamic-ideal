@@ -1,0 +1,43 @@
+{
+	"$id": "https://github.com/wp-pay-gateways/adyen/blob/master/json-schemas/payment-response.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Adyen payment response.",
+	"type": "object",
+	"properties": {
+		"action": {
+			"$ref": "payment-response-action.json"
+		},
+		"resultCode": {
+			"type": "string",
+			"description": "The result of the payment.",
+			"enum": [
+				"AuthenticationFinished",
+				"AuthenticationNotRequired",
+				"Authorised",
+				"Cancelled",
+				"ChallengeShopper",
+				"Error",
+				"IdentifyShopper",
+				"Pending",
+				"PresentToShopper",
+				"Received",
+				"RedirectShopper",
+				"Refused"
+			]
+		},
+		"pspReference": {
+			"type": "string",
+			"description": "Adyen's 16-character string reference associated with the transaction/request. This value is globally unique; quote it when communicating with us about this request.",
+			"minLength": 16,
+			"maxLength": 16
+		},
+		"refusalReason": {
+			"type": "string",
+			"description": "If the payment's authorisation is refused or an error occurs during authorisation, this field holds Adyen's mapped reason for the refusal or a description of the error."
+		},
+		"refusalReasonCode": {
+			"type": "string",
+			"description": "Code that specifies the refusal reason."
+		}
+	}
+}

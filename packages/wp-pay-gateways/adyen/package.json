@@ -1,0 +1,46 @@
+{
+	"name": "adyen",
+	"version": "4.5.1",
+	"description": "Adyen driver for the WordPress payment processing library.",
+	"author": {
+		"name": "Pronamic",
+		"email": "info@pronamic.nl",
+		"url": "https://www.pronamic.nl/"
+	},
+	"contributors": [
+		{
+			"name": "Remco Tolsma",
+			"email": "info@remcotolsma.nl",
+			"url": "https://www.remcotolsma.nl/"
+		}
+	],
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"wordpress",
+		"wp",
+		"pay",
+		"adyen",
+		"gateway",
+		"pronamic"
+	],
+	"homepage": "https://www.wp-pay.org/gateways/adyen/",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/wp-pay-gateways/adyen"
+	},
+	"bugs": {
+		"url": "https://github.com/wp-pay-gateways/adyen/issues"
+	},
+	"devDependencies": {
+		"@wordpress/env": "^9.1.0",
+		"@wordpress/scripts": "^27.0.0",
+		"prettier": "npm:wp-prettier@^3.0.3"
+	},
+	"prettier": "@wordpress/prettier-config",
+	"scripts": {
+		"build": "wp-scripts build js/src/checkout-drop-in.js --output-path=js/dist",
+		"start": "wp-scripts start js/src/checkout-drop-in.js --output-path=js/dist",
+		"lint-js": "wp-scripts lint-js js/src",
+		"lint-pkg-json": "wp-scripts lint-pkg-json"
+	}
+}
